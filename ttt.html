@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang đổi màu nền</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+      transition: 0.3s;
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    .dark-mode {
+      background-color: black;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chào bạn đến với trang web!</h1>
+  <button onclick="toggleDarkMode()">Đổi màu nền</button>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  background-color: #ff8b8b;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  padding: 10px;
+  font-size: 28px;
+}
+
+nav {
+  background-color: black;
+  padding: 10px;
+}
+
+nav a {
+  color: lime;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+h2 {
+  color: blue;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.comic-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.comic {
+  width: 120px;
+}
+
+.comic img {
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+
+.comic p {
+  margin-top: 5px;
+  font-weight: bold;
+}
