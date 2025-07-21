@@ -1,0 +1,82 @@
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+}
+.logo img {
+  font-size: 24px;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.banner img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+section {
+  padding: 20px;
+  
+}
+
+.truyen-list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.truyen-item {
+  width: 150px;
+}
+
+.truyen-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.ten {
+  font-weight: bold;
+}
+
+.chuong {
+  font-size: 14px;
+  color: #ccc;
+}
+/*đổi màu khi di chuột vào menu*/
+.main-menu li a {
+  color: white;              
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-menu li a:hover {
+  color: orange;            
+}
