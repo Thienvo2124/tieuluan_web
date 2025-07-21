@@ -70,7 +70,7 @@ section {
   font-size: 14px;
   color: #ccc;
 }
-/*đổi màu khi di chuột vào menu*/
+/*-->đổi màu khi di chuột vào menu*/
 .main-menu li a {
   color: white;              
   text-decoration: none;
@@ -79,4 +79,45 @@ section {
 
 .main-menu li a:hover {
   color: orange;            
+}
+/*đổi màu khi di chuột vào menu <--*/
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 1000px; /* độ rộng dropdown */
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.has-dropdown:hover .dropdown {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.has-dropdown .dropdown ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.has-dropdown .dropdown ul li {
+  width: 20%;
+  margin-bottom: 10px;
+  color: #333;
+  cursor: pointer;
+}
+
+.has-dropdown .dropdown ul li:hover {
+  color: #ff6600;
 }
