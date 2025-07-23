@@ -1,6 +1,6 @@
-/* ======================== */
+
 /* Biến CSS cho màu sắc */
-/* ======================== */
+
 :root {
     --main-bg-color: #1a1a1a;
     --card-bg-color: #222222;
@@ -9,10 +9,7 @@
     --accent-color: #ff5722;
     --border-color: #444444;
 }
-
-/* ======================== */
 /* Styling chung */
-/* ======================== */
 body {
     background-color: var(--main-bg-color);
     color: var(--text-color);
@@ -28,9 +25,7 @@ body {
     display: none;
 }
 
-/* ======================== */
 /* Form đăng nhập/đăng ký */
-/* ======================== */
 .auth-container {
     width: 90%;
     max-width: 400px;
@@ -105,9 +100,7 @@ body {
     text-decoration: none;
 }
 
-/* ======================== */
 /* Media Queries cho Tablet và Desktop */
-/* ======================== */
 @media (min-width: 768px) {
     .auth-container {
         width: 60%;
