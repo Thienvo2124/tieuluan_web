@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản Lý Truyện</title>
+
+  <!-- CSS cho bố cục admin chung -->
+  <link rel="stylesheet" href="css/admin_style.css">
+
+  <!-- CSS dành riêng cho trang Quản lý truyện -->
+  <link rel="stylesheet" href="css/quanlytruyen_style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>ADMIN PANEL</h2>
+      <ul class="menu">
+        <li><a href="admin.html">🏠 Tổng Quan</a></li>
+        <li><a href="quanlytruyen.html">📚 Quản Lý Truyện</a></li>
+        <li><a href="#">👥 Quản Lý Người Dùng</a></li>
+        <li><a href="#">⚙️ Cài Đặt</a></li>
+        <li><a href="#">🚪 Đăng Xuất</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <h1>📚 Danh sách truyện</h1>
+      <button class="btn-add">+ Thêm truyện</button>
+      <!-- FORM THÊM TRUYỆN (nên để ở đây) -->
+        <div id="form-them-truyen" style="display: none; margin-bottom: 20px;">
+          <input type="text" id="tenTruyen" placeholder="Tên truyện">
+          <input type="text" id="tacGia" placeholder="Tác giả">
+          <input type="number" id="soChuong" placeholder="Số chương">
+          <input type="text" id="trangThai" placeholder="Trạng thái">
+          <input type="text" id="linkAnh" placeholder="Link ảnh (VD: truyen3.jpg)">
+          <button onclick="themTruyen()">Lưu</button>
+        </div>
+
+
+      <table class="truyen-table">
+
+        <thead>
+          <tr>
+            <th>Ảnh</th>
+            <th>Tên truyện</th>
+            <th>Tác giả</th>
+            <th>Chương</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+
+        </thead>
+        <!-- danh sách truyện -->
+        <tbody>
+          <script src="js/quanlytruyen.js"></script>
+        </tbody>
+      </table>
+    </main>
+  </div>
+</body>
+</html>
