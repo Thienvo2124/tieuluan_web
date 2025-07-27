@@ -1,0 +1,31 @@
+<!-- chitiettruyen.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết truyện</title>
+</head>
+<body>
+  <div id="noidung-truyen"></div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    fetch('data/truyen.json')
+      .then(res => res.json())
+      .then(data => {
+        const truyen = data.find(t => t.id == id);
+        if (truyen) {
+          document.getElementById('noidung-truyen').innerHTML = `
+            <h1>${truyen.ten}</h1>
+            <img src="${truyen.hinhanh}" width="200">
+            <p>${truyen.noidung}</p>
+          `;
+        } else {
+          document.getElementById('noidung-truyen').innerText = "Không tìm thấy truyện!";
+        }
+      });
+  </script>
+</body>
+</html>

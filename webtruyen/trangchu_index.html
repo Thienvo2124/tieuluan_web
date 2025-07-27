@@ -103,104 +103,10 @@
 
     </section>
 
-    <!-- Section chi tiết truyện -->
-    <section class="truyen-detail" style="display: none;">
-      <div class="detail-content">
-        <button class="back">← Quay lại</button>
-        <div class="detail-header">
-          <img class="detail-image" src="" alt="Truyện">
-          <div class="detail-info">
-            <h2 class="detail-title"></h2>
-            <p class="detail-author">Tác giả: <span></span></p>
-            <p class="detail-views">Lượt xem: <span></span></p>
-            <p class="detail-follows">Theo dõi: <span></span></p>
-            <p class="detail-status">Trạng thái: <span></span></p>
-            <div class="detail-genres"></div>
-          </div>
-        </div>
-        <p class="detail-description"></p>
-        <h3>Danh sách chương</h3>
-        <div class="chapter-list"></div>
-        <div class="detail-actions">
-          <button class="read-first">Đọc từ đầu</button>
-          <button class="follow">Theo dõi</button>
-          <button class="like">Thích</button>
-        </div>
-      </div>
-    </section>
   </div>
 
-  <!-- <script>
-    // Menu hamburger cho mobile
-    document.querySelector('.hamburger').addEventListener('click', () => {
-      document.querySelector('.main-menu ul').classList.toggle('active');
-    });
 
-    // Xử lý hiển thị chi tiết truyện
-    const truyenItems = document.querySelectorAll('.truyen-item');
-    const truyenDetail = document.querySelector('.truyen-detail');
-    const backButton = document.querySelector('.back');
-    const detailImage = document.querySelector('.detail-image');
-    const detailTitle = document.querySelector('.detail-title');
-    const detailAuthor = document.querySelector('.detail-author span');
-    const detailViews = document.querySelector('.detail-views span');
-    const detailFollows = document.querySelector('.detail-follows span');
-    const detailStatus = document.querySelector('.detail-status span');
-    const detailGenres = document.querySelector('.detail-genres');
-    const detailDescription = document.querySelector('.detail-description');
-    const chapterList = document.querySelector('.chapter-list');
 
-    truyenItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Lấy dữ liệu từ truyen-item
-        const title = item.dataset.title;
-        const description = item.dataset.description;
-        const author = item.dataset.author;
-        const views = item.dataset.views;
-        const follows = item.dataset.follows;
-        const status = item.dataset.status;
-        const image = item.dataset.image;
-        const chapters = parseInt(item.dataset.chapters);
-
-        // Cập nhật nội dung chi tiết
-        detailTitle.textContent = title;
-        detailAuthor.textContent = author;
-        detailViews.textContent = views;
-        detailFollows.textContent = follows;
-        detailStatus.textContent = status;
-        detailImage.src = image;
-        detailDescription.textContent = description;
-
-        // Thêm thể loại mẫu
-        detailGenres.innerHTML = `
-          <span class="genre">Action</span>
-          <span class="genre">Fantasy</span>
-          <span class="genre">Martial Arts</span>
-        `;
-
-        // Tạo danh sách chương
-        chapterList.innerHTML = '';
-        for (let i = 1; i <= chapters; i++) {
-          const chapter = document.createElement('a');
-          chapter.href = `#chapter-${i}`;
-          chapter.textContent = `Chương ${i}`;
-          chapter.classList.add('chapter-item');
-          chapterList.appendChild(chapter);
-        }
-
-        // Hiển thị section chi tiết
-        truyenDetail.style.display = 'block';
-        document.querySelector('.truyen-hot').style.display = 'none';
-        document.querySelector('.truyen-moi').style.display = 'none';
-      });
-    });
-
-    // Quay lại danh sách truyện
-    backButton.addEventListener('click', () => {
-      truyenDetail.style.display = 'none';
-      document.querySelector('.truyen-hot').style.display = 'block';
-      document.querySelector('.truyen-moi').style.display = 'block';
-    });
-  </script> -->
+  
 </body>
 </html>
