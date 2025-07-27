@@ -170,4 +170,62 @@ body {
   padding: 20px;
 }
 
+/* Section truyện */
+.truyen-hot, .truyen-moi {
+  margin-bottom: 40px;
+}
+
+.truyen-hot h2, .truyen-moi h2 {
+  font-size: 24px;
+  color: #ff6600;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.truyen-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.truyen-item {
+  text-align: center;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.truyen-item:hover {
+  transform: scale(1.05);
+}
+
+.truyen-item img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+}
+
+.ten {
+  font-weight: bold;
+  color: #ffffff;
+  margin: 8px 0 4px;
+  font-size: 16px;
+}
+
+.chuong {
+  font-size: 14px;
+  color: #b0b0b0;
+}
+
+.views {
+  font-size: 12px;
+  color: #b0b0b0;
+}
+
+.status {
+  font-size: 12px;
+  color: #ff6600;
+}
+
 

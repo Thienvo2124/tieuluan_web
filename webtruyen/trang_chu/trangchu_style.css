@@ -201,12 +201,10 @@ body {
 }
 
 .truyen-item img {
-  width: 190px;
-  height: 247px;
+  width: 100%;
   border-radius: 8px;
   border: 1px solid #2a2a2a;
-  object-fit: cover; 
-} 
+}
 
 .ten {
   font-weight: bold;
