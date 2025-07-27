@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết truyện</title>
+  <link rel="stylesheet" href="trangchu_style.css">
+</head>
+<body>
+  <div id="noidung-truyen">Đang tải truyện...</div>
+
+  <script>
+    // Lấy ID truyện từ URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+
+    // Dữ liệu truyện giả lập
+    const danhSachTruyen = [
+      {
+        id: "1",
+        ten: "Truyện Hot 1",
+        hinhanh: "truyen1.jpg",
+        tacgia: "Tác Giả 1",
+        chuong: "50",
+        luotxem: "2,345,678",
+        mota: "Một truyện hành động đầy kịch tính.",
+        trangthai: "Đang Cập Nhật"
+      },
+      {
+        id: "2",
+        ten: "Truyện Võ",
+        hinhanh: "truyen2.jpg",
+        tacgia: "Tác Giả 2",
+        chuong: "123",
+        luotxem: "1,987,654",
+        mota: "Hành trình của một võ sĩ trẻ.",
+        trangthai: "Đang Cập Nhật"
+      }
+    ];
+
+    // Tìm truyện theo id
+    const truyen = danhSachTruyen.find(t => t.id === id);
+
+    // Hiển thị nội dung
+    if (truyen) {
+      document.getElementById('noidung-truyen').innerHTML = `
+        <div class="truyen-detail">
+          <button class="back" onclick="history.back()">← Quay lại</button>
+          <div class="detail-content">
+            <div class="detail-header">
+              <img class="detail-image" src="${truyen.hinhanh}" alt="${truyen.ten}">
+              <div class="detail-info">
+                <h1 class="detail-title">${truyen.ten}</h1>
+                <p class="detail-author">Tác giả: ${truyen.tacgia}</p>
+                <p class="detail-views">Lượt xem: ${truyen.luotxem}</p>
+                <p class="detail-status">Trạng thái: ${truyen.trangthai}</p>
+              </div>
+            </div>
+            <div class="detail-description">${truyen.mota}</div>
+            <div class="detail-actions">
+              <button class="read-first">📖 Đọc từ đầu</button>
+              <button class="follow">➕ Theo dõi</button>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      document.getElementById('noidung-truyen').innerText = "Không tìm thấy truyện!";
+    }
+  </script>
+</body>
+</html>
