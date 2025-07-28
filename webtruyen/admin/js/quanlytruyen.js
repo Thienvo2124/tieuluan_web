@@ -14,7 +14,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // ✅ Gắn sự kiện đăng xuất bên trong DOMContentLoaded
+  const logoutBtn = document.getElementById("btnLogout");
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (confirm("Bạn có chắc chắn muốn đăng xuất?")) {
+        window.location.href = "../trangchu_index.html";
+      }
+    });
+  }
 });
+
 
 // Hàm thêm truyện
 function themTruyen() {
