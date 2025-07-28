@@ -1,0 +1,139 @@
+/* ...existing code... */
+.search-advanced-box {
+  background: #232323;
+  border-radius: 10px;
+  padding: 32px 32px 24px 32px;
+  max-width: 1200px;
+  margin: 32px auto;
+  color: #fff;
+}
+
+.search-advanced-title {
+  color: #3ec6ff;
+  margin-bottom: 20px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-advanced-note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-advanced-note .tick { color: #5fff7f; }
+.search-advanced-note .cross { color: #ff5f5f; }
+.search-advanced-note .neutral { color: #fff; }
+
+.hide-search-box {
+  background: #3ec6ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background: #3ec6ff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.search-advanced-form {
+  width: 100%;
+}
+
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+  margin-bottom: 24px;
+}
+
+.genres-grid label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.genres-grid b {
+  color: #fff;
+  font-size: 17px;
+}
+
+.search-advanced-options {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.search-advanced-options > div {
+  margin-bottom: 12px;
+}
+
+.search-advanced-options label {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.search-advanced-options select,
+.search-advanced-options input[type="text"] {
+  width: 180px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.search-btn-wrap {
+  align-self: flex-end;
+}
+
+.search-btn {
+  background: #5fd37f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 32px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .genres-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .search-advanced-box {
+    padding: 16px 4vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .genres-grid {
+    grid-template-columns: 1fr;
+  }
+  .search-advanced-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

@@ -7,10 +7,11 @@
   <title>Trang Truyện - Truyen</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="css/trangchu_style.css">
+  <link rel="stylesheet" href="css/timtruyen_style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+ <header>
     <div class="header-top">
       <div class="logo">
         <img src="img/logo_bocap.png" alt="Logo bocapTruyen">
@@ -85,49 +86,107 @@
         
         <li><a href="#">Lịch Sử</a></li>
         <li><a href="#">Theo Dõi</a></li>
-        <li><a href="timtruyen.html">Tìm Truyện</a></li>
+        <li><a href="timkiem_index.html">Tìm Truyện</a></li>
         <li><a href="#">Fanpage</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Container content bao phủ từ Truyện Hot trở xuống -->
-  <div class="content">
-    <!-- Section Truyện Hot -->
-    <section class="truyen-hot">
-      <h2>🔥 Truyện Hot</h2>
-      <div class="truyen-list">
-
-        <div class="truyen-item">
-          <img src="img/img_truyen/chuyen-sinh-thanh-lieu-dot-bien_1663644307.jpg" alt="chuyen-sinh-thanh-lieu-dot-bien">
-          <p class="ten">Chuyển Sinh Thành Liễu Đột Biến</p>
-          <p class="chuong">Chương 50</p>
-         </div>
-
-        <div class="truyen-item">
-          <img src="truyen1.jpg" alt="Truyện Hot 1">
-          <p class="ten">Truyện Hot 1</p>
-          <p class="chuong">Chương </p>
-         </div>
-        
-      </div>
-    </section>
-
-    <!-- Section Truyện Mới Cập Nhật -->
-    <section class="truyen-moi">
-      <h2>📥 Truyện Mới Cập Nhật</h2>
-      <a> 
-
-        
-
-      </a>
-         
-
-
-
-    </section>
-
+  <div class="content"><div class="search-advanced-box">
+  <h2 class="search-advanced-title">
+    <i class="fa fa-flag"></i> Tìm kiếm nâng cao
+  </h2>
+  <div class="search-advanced-note">
+    <span class="tick">&#10003; Tìm trong những thể loại này</span><br>
+    <span class="cross">&#10007; Loại trừ những thể loại này</span><br>
+    <span class="neutral">&#9633; Truyện có thể thuộc hoặc không thuộc thể loại này</span>
+    <button class="hide-search-box">Ẩn khung tìm kiếm</button>
   </div>
-
+  <button class="reset-btn">&#8635; Reset</button>
+  <form class="search-advanced-form">
+    <div class="genres-grid">
+      <div>
+        <b>Thể loại truyện</b><br>
+        <label><input type="checkbox"> Action</label><br>
+        <label><input type="checkbox"> Chuyển Sinh</label><br>
+        <label><input type="checkbox"> Comic</label><br>
+        <label><input type="checkbox"> Doujinshi</label><br>
+        <label><input type="checkbox"> Gender Bender</label><br>
+        <label><input type="checkbox"> Horror</label><br>
+        <label><input type="checkbox"> Josei</label><br>
+        <label><input type="checkbox"> Manga</label><br>
+        <label><input type="checkbox"> Martial Arts</label><br>
+        <label><input type="checkbox"> Ngôn Tình</label><br>
+        <label><input type="checkbox"> Romance</label><br>
+        <label><input type="checkbox"> Seinen</label><br>
+        <label><input type="checkbox"> Shounen</label><br>
+        <label><input type="checkbox"> Sports</label><br>
+        <label><input type="checkbox"> Trọng Sinh</label><br>
+        <label><input type="checkbox"> Xuyên Không</label><br>
+      </div>
+      <div>
+        <label><input type="checkbox"> Adventure</label><br>
+        <label><input type="checkbox"> Cổ Đại</label><br>
+        <label><input type="checkbox"> Demons</label><br>
+        <label><input type="checkbox"> Drama</label><br>
+        <label><input type="checkbox"> Harem</label><br>
+        <label><input type="checkbox"> Huyền Huyễn</label><br>
+        <label><input type="checkbox"> Mafia</label><br>
+        <label><input type="checkbox"> Manhua</label><br>
+        <label><input type="checkbox"> Military</label><br>
+        <label><input type="checkbox"> One shot</label><br>
+        <label><input type="checkbox"> School Life</label><br>
+        <label><input type="checkbox"> Shoujo</label><br>
+        <label><input type="checkbox"> Shoujo Ai</label><br>
+        <label><input type="checkbox"> Shounen Ai</label><br>
+        <label><input type="checkbox"> Supernatural</label><br>
+        <label><input type="checkbox"> Truyện Màu</label><br>
+      </div>
+      <div>
+        <label><input type="checkbox"> Anime</label><br>
+        <label><input type="checkbox"> Comedy</label><br>
+        <label><input type="checkbox"> Detective</label><br>
+        <label><input type="checkbox"> Fantasy</label><br>
+        <label><input type="checkbox"> Historical</label><br>
+        <label><input type="checkbox"> Isekai</label><br>
+        <label><input type="checkbox"> Magic</label><br>
+        <label><input type="checkbox"> Manhwa</label><br>
+        <label><input type="checkbox"> Mystery</label><br>
+        <label><input type="checkbox"> Psychological</label><br>
+        <label><input type="checkbox"> Sci-fi</label><br>
+        <label><input type="checkbox"> Slice of life</label><br>
+        <label><input type="checkbox"> Tragedy</label><br>
+        <label><input type="checkbox"> Webtoon</label><br>
+      </div>
+    </div>
+    <div class="search-advanced-options">
+      <div>
+        <label>Quốc gia</label><br>
+        <select>
+          <option>Tất cả</option>
+        </select>
+      </div>
+      <div>
+        <label>Tình Trạng</label><br>
+        <select>
+          <option>Tất cả</option>
+        </select>
+      </div>
+      <div>
+        <label>Số lượng chương</label><br>
+        <input type="text" value="> 0">
+      </div>
+      <div>
+        <label>Sắp xếp</label><br>
+        <select>
+          <option>Ngày đăng giảm dần</option>
+        </select>
+      </div>
+      <div class="search-btn-wrap">
+        <button type="submit" class="search-btn">Tìm kiếm</button>
+      </div>
+    </div>
+  </form>
+</div></div>
+  
 </body>
-</html>

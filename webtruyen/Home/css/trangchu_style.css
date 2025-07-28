@@ -163,6 +163,33 @@ body {
   color: #ff6600;
 }
 
+/* ...existing code... */
+.dropdown .theloai-list {
+  display: grid;
+  grid-template-columns: repeat(6, 3fr); 
+  gap: 8px 32px;
+  padding: 16px 24px;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown .theloai-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown .theloai-list a {
+  color: #fff; 
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.dropdown .theloai-list a:hover {
+  color: #ffb300; 
+}
+/* ...existing code... */
+
 /* Content container */
 .content {
   max-width: 1200px;
