@@ -130,8 +130,14 @@
 
 @media (max-width: 600px) {
   .genres-grid {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các cột */
+  justify-content: space-between;
+}
+
+.genres-grid > div {
+  flex: 1;
+}
   .search-advanced-options {
     flex-direction: column;
     gap: 12px;
