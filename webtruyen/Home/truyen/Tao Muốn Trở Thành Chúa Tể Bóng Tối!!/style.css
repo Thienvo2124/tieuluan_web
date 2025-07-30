@@ -88,44 +88,48 @@ body {
 .description h2 {
   margin-top: 0;
 }
-.chapter-list {
-  margin-top: 30px;
-  background-color: #2e2e2e;
-  padding: 15px;
+.danh-sach-chuong {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 10px;
+  font-family: Arial, sans-serif;
   border-radius: 5px;
 }
 
-.chapter-list h2 {
-  margin-top: 0;
-  margin-bottom: 15px;
-}
-
-.chapter-list ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.chapter-list li {
+.tieu-de {
+  display: flex;
+  align-items: center;
   margin-bottom: 10px;
-  padding: 8px;
-  background-color: #3a3a3a;
-  border-radius: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tieu-de img {
+  width: 16px;
+  margin-right: 6px;
+  width: 28px;
+  height: 28px;
+}
+
+.bang-chuong {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.chuong {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 6px 10px;
+  border-bottom: 1px solid #444;
 }
 
-.chapter-list a {
-  text-decoration: none;
-  color: #6dd96d;
-  font-weight: bold;
+.chuong:last-child {
+  border-bottom: none;
 }
 
-.chapter-list span {
-  color: #ccc;
-  font-size: 0.9em;
-}
-.chapter-number {
-  display: block;
-  margin-top: 5px;
+.chuong:hover {
+  background-color: #333;
+  cursor: pointer;
 }
