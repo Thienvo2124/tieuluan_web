@@ -125,3 +125,7 @@ body {
   color: #ccc;
   font-size: 0.9em;
 }
+.chapter-number {
+  display: block;
+  margin-top: 5px;
+}
