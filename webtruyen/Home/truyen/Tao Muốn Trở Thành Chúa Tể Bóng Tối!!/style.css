@@ -1,0 +1,127 @@
+body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.breadcrumb {
+  color: #bbb;
+  margin-bottom: 15px;
+}
+
+.truyen-info {
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail {
+  width: 240px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.details h1 {
+  font-size: 28px;
+  margin: 0 0 10px;
+}
+
+.details p {
+  margin: 4px 0;
+}
+
+.tags span {
+  border: 1px solid orange;
+  padding: 3px 8px;
+  margin-right: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 15px;
+}
+
+.read {
+  background-color: #6dd96d;
+  color: #000;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.follow {
+  background-color: #ff4e78;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.like {
+  background-color: #c92fff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.description {
+  margin-top: 30px;
+  background-color: #2e2e2e;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.description h2 {
+  margin-top: 0;
+}
+.chapter-list {
+  margin-top: 30px;
+  background-color: #2e2e2e;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.chapter-list h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.chapter-list ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.chapter-list li {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #3a3a3a;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chapter-list a {
+  text-decoration: none;
+  color: #6dd96d;
+  font-weight: bold;
+}
+
+.chapter-list span {
+  color: #ccc;
+  font-size: 0.9em;
+}
