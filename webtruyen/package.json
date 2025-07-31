@@ -1,0 +1,11 @@
+{
+  "name": "tieuluan_web",
+  "version": "1.0.0",
+  "main": "webtruyen/index.js",
+  "scripts": {
+    "start": "node webtruyen/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
