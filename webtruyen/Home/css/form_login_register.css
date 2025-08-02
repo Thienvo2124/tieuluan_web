@@ -1,6 +1,6 @@
+/* File: css/form_style.css */
 
 /* Biến CSS cho màu sắc */
-
 :root {
     --main-bg-color: #1a1a1a;
     --card-bg-color: #222222;
@@ -9,6 +9,7 @@
     --accent-color: #ff5722;
     --border-color: #444444;
 }
+
 /* Styling chung */
 body {
     background-color: var(--main-bg-color);
@@ -19,10 +20,6 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-}
-
-.hidden {
-    display: none;
 }
 
 /* Form đăng nhập/đăng ký */
@@ -64,11 +61,15 @@ body {
     color: var(--text-color);
     border-radius: 4px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Thêm transition */
 }
 
 .input-group input:focus {
     outline: none;
     border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+    /* Thêm hiệu ứng "phát sáng" */
 }
 
 .button-submit {
@@ -81,12 +82,15 @@ body {
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Thêm transition */
 }
 
 .button-submit:hover {
     background-color: #e64a19;
     /* Màu cam đậm hơn */
+    transform: translateY(-2px);
+    /* Hơi nhích lên một chút */
 }
 
 .toggle-link {
@@ -98,6 +102,13 @@ body {
 .toggle-link a {
     color: var(--accent-color);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toggle-link a:hover {
+    color: #ffffff;
+    /* Đổi màu khi di chuột */
+    text-decoration: underline;
 }
 
 /* Media Queries cho Tablet và Desktop */
