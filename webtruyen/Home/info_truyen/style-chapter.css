@@ -81,12 +81,13 @@ body {
 .nav-buttons button:hover {
   background-color: #ccc;
 }
+
 .chapter-images {
   margin-top: 30px;
   display: flex;
-  flex-direction: column;  
-  align-items: center;     
-  gap: 20px;               
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .chapter-images img {
@@ -95,4 +96,27 @@ body {
   height: auto;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
   border-radius: 8px;
+}
+
+/* demo test chap ta la chua te bong toi*/
+a.disabled {
+  pointer-events: none;
+  /* Ngăn không cho click */
+  cursor: default;
+  /* Đổi con trỏ chuột */
+}
+
+a.disabled button {
+  opacity: 0.5;
+  /* Làm mờ nút đi */
+  background-color: #6c757d;
+  /* Đổi màu nền xám */
+}
+
+#breadcrumb-container a {
+
+  color: #AAAAAA;
+  text-decoration: none;
+
+
 }
