@@ -52,7 +52,7 @@ if (currentChapter >= totalChapters) {
 const imageContainer = document.querySelector('.chapter-images');
 const imagePath = `../../../img/img_truyen/${seriesName}/chapter/chapter_${currentChapter}/`;
 
-for (let i = 1; i <= totalPages; i++) {
+for (let i = 0; i <= totalPages; i++) {
     const imgElement = document.createElement('img');
     imgElement.src = `${imagePath}${i}.jpg`;
     imgElement.alt = `Trang ${i} - ${seriesName} - Chapter ${currentChapter}`;
