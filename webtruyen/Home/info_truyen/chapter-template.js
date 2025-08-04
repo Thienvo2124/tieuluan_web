@@ -4,9 +4,13 @@ const dataProvider = document.getElementById('chapter-data-provider');
 
 const seriesName = dataProvider.dataset.seriesName;
 // Dùng parseInt để chuyển chuỗi thành số
-const currentChapter = parseInt(dataProvider.dataset.currentChapter, 10);
+// const currentChapter = parseInt(dataProvider.dataset.currentChapter, 10);
+const currentChapter = parseFloat(dataProvider.dataset.currentChapter);
+
 const totalPages = parseInt(dataProvider.dataset.totalPages, 10);
-const totalChapters = parseInt(dataProvider.dataset.totalChapters, 10);
+// const totalChapters = parseInt(dataProvider.dataset.totalChapters, 10);
+const totalChapters = parseFloat(dataProvider.dataset.totalChapters);
+
 
 const homeLink = dataProvider.dataset.homeLink;
 const seriesLink = dataProvider.dataset.seriesLink;
