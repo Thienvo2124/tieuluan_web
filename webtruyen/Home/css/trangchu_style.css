@@ -456,3 +456,74 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* === CSS CHO USER DROPDOWN === */
+
+/* Vị trí gốc cho dropdown */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Nút bấm để hiển thị menu */
+.user-menu-button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid var(--accent-color, #ff5722);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu-button .arrow-down {
+  margin-left: 8px;
+  font-size: 10px;
+}
+
+/* Nội dung dropdown (ẩn mặc định) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2e2e2e;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  border-radius: 5px;
+  padding: 5px 0;
+  right: 0;
+  /* Canh lề phải */
+}
+
+/* Các link bên trong dropdown */
+.dropdown-content a {
+  color: #f1f1f1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+/* Đổi màu khi di chuột qua link */
+.dropdown-content a:hover {
+  background-color: #444;
+}
+
+/* Hiển thị dropdown khi di chuột vào container */
+.user-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Class đa năng để ẩn mọi phần tử */
+.hidden {
+  display: none !important;
+}
+
+#user_avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
