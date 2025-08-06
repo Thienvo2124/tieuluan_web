@@ -534,9 +534,9 @@ a {
   align-items: center;
 
   /* === THÊM 2 DÒNG NÀY VÀO === */
-  padding-bottom: 10px;
+  padding-bottom: 50px;
   /* Tạo ra một vùng đệm vô hình 10px ở dưới avatar */
-  margin-bottom: -10px;
+  margin-bottom: -50px;
   /* Bù lại khoảng trống vừa tạo để không làm xô lệch layout */
 }
 
@@ -564,7 +564,7 @@ a {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 60%;
   /* Hơi cách avatar một chút */
   right: 0;
   background-color: #2e2e2e;
