@@ -1,11 +1,10 @@
 // File: js/database.js
 
-// Đây là "kho" chứa toàn bộ dữ liệu truyện ban đầu của chúng ta.
 const initialStoriesData = [
     {
-        id: new Date('2025-08-01').getTime(), // Dùng ngày cụ thể để ID cố định
+        id: new Date('2025-08-01').getTime(), 
         title: "Gachi Akuta",
-        author: "Kei Urana", // Bạn có thể sửa lại
+        author: "Kei Urana", 
         coverImage: "/webtruyen/Home/img/img_truyen/Gachi Akuta/gachiakuta_1663074350.jpg",
         description: "Rudo sống trong khu ổ chuột của những hậu duệ của tội phạm. Cậu căm ghét tầng lớp thượng lưu...",
         status: "Đang tiến hành",
