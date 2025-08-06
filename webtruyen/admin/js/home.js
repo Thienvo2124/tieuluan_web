@@ -2,9 +2,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ==================================================
-    // === KHỐI KHỞI TẠO DATABASE (LOGIC MỚI) ===
-    // ==================================================
     let stories = JSON.parse(localStorage.getItem('stories_db'));
 
     // Kiểm tra nếu database chưa tồn tại trong localStorage
@@ -22,9 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return; // Dừng script nếu không có dữ liệu gốc
         }
     }
-    // ==================================================
-    // === KẾT THÚC KHỐI KHỞI TẠO ===
-    // ==================================================
 
 
     // Tìm vị trí để chèn truyện trên HTML
