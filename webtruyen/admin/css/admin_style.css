@@ -15,7 +15,7 @@ body {
   background-color: #1c1c1c;
   color: #fff;
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h2 {
@@ -51,4 +51,218 @@ body {
   flex: 1;
   padding: 40px;
   background-color: #fff;
+}
+
+/* === CSS CHO MODAL POPUP === */
+.modal {
+  position: fixed;
+  /* Nằm cố định trên màn hình */
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Lớp nền mờ */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #333;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+/* Style cho các input group trong modal */
+/* =================================== */
+/* == CSS MỚI CHO MODAL SỬA NGƯỜI DÙNG == */
+/* =================================== */
+
+/* Lớp nền mờ bao phủ toàn màn hình */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Nền mờ đậm hơn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  /* Ẩn ban đầu */
+  pointer-events: none;
+  /* Không cho tương tác khi ẩn */
+  transition: opacity 0.3s ease;
+}
+
+/* Khi modal được hiện (không còn class hidden) */
+.modal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Khung nội dung chính của modal */
+.modal-content {
+  background-color: #222222;
+  /* Giống màu nền form đăng nhập */
+  padding: 2rem;
+  border: 1px solid #444444;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: scale(0.95);
+  /* Hiệu ứng zoom nhẹ khi xuất hiện */
+  transition: transform 0.3s ease;
+}
+
+.modal:not(.hidden) .modal-content {
+  transform: scale(1);
+}
+
+
+/* Tiêu đề "Sửa thông tin người dùng" */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #ff5722;
+  /* Màu cam nhấn mạnh */
+  font-size: 24px;
+}
+
+/* Nút X để đóng modal */
+.close-button {
+  color: #aaaaaa;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #fff;
+}
+
+/* Các nhóm input (label + input) */
+.modal-content .input-group {
+  margin-bottom: 1rem;
+}
+
+.modal-content .input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
+
+.modal-content .input-group input,
+.modal-content .input-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #444444;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content .input-group input:focus,
+.modal-content .input-group select:focus {
+  outline: none;
+  border-color: #ff5722;
+}
+
+.modal-content input:disabled {
+  background-color: #333;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Nút "Lưu thay đổi" */
+.modal-content .button-submit {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background-color: #ff5722;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content .button-submit:hover {
+  background-color: #e64a19;
+  /* Màu cam đậm hơn */
+}
+
+/* Class đa năng để ẩn */
+.hidden {
+  display: none !important;
+}
+
+/* =================================== */
+/* ==   FIX LỖI MÀU CHO DROPDOWN      == */
+/* =================================== */
+
+/* Style cho chính thẻ SELECT trong Modal */
+.modal-content .input-group select {
+  /* Tắt giao diện mặc định của trình duyệt */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Thêm mũi tên tùy chỉnh bằng background-image (SVG) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AAAAAA' d='M6 8L0 2l1.4-1.4L6 5.2 10.6.6 12 2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+  padding-right: 2rem;
+  /* Thêm khoảng trống cho mũi tên */
+}
+
+/* Style cho các LỰA CHỌN (OPTION) bên trong dropdown */
+.modal-content .input-group option {
+  background-color: #333333;
+  /* Nền màu xám đậm */
+  color: #ffffff;
+  /* Chữ màu trắng */
 }
