@@ -465,24 +465,6 @@ body {
   display: inline-block;
 }
 
-/* Nút bấm để hiển thị menu */
-.user-menu-button {
-  background-color: transparent;
-  color: white;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  border: 2px solid var(--accent-color, #ff5722);
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.user-menu-button .arrow-down {
-  margin-left: 8px;
-  font-size: 10px;
-}
 
 /* Nội dung dropdown (ẩn mặc định) */
 .dropdown-content {
@@ -523,7 +505,79 @@ body {
 }
 
 #user_avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+a {
+  text-decoration: none;
+
+
+}
+
+/* =================================== */
+/* ==   CSS MỚI CHO AVATAR DROPDOWN   == */
+/* =================================== */
+
+/* Container chính của dropdown */
+.user-dropdown {
+  position: relative;
+  display: flex;
+  /* Giúp căn chỉnh avatar theo chiều dọc */
+  align-items: center;
+}
+
+.user-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /* === THÊM 2 DÒNG NÀY VÀO === */
+  padding-bottom: 50px;
+  /* Tạo ra một vùng đệm vô hình 10px ở dưới avatar */
+  margin-bottom: -50px;
+  /* Bù lại khoảng trống vừa tạo để không làm xô lệch layout */
+}
+
+/* Avatar, cũng là nút kích hoạt menu */
+.user-avatar-trigger {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  /* Bo tròn thành hình tròn */
+  object-fit: cover;
+  /* Đảm bảo ảnh không bị méo */
+  cursor: pointer;
+  border: 2px solid transparent;
+  /* Viền trong suốt để không bị giật khi hover */
+  transition: border-color 0.3s ease;
+}
+
+/* Hiệu ứng viền cam khi di chuột vào avatar */
+.user-avatar-trigger:hover {
+  border-color: #f39c12;
+  /* Màu cam của nút Đăng Nhập */
+}
+
+/* Nội dung dropdown (không thay đổi nhiều) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 60%;
+  /* Hơi cách avatar một chút */
+  right: 0;
+  background-color: #2e2e2e;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  border-radius: 5px;
+  padding: 5px 0;
+}
+
+/* ... Các style khác cho .dropdown-content a vẫn giữ nguyên ... */
+
+/* Logic hiển thị dropdown khi di chuột vào container */
+.user-dropdown:hover .dropdown-content {
+  display: block;
 }
