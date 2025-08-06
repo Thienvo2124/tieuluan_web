@@ -10,7 +10,7 @@ const initialStoriesData = [
         description: "Rudo sống trong khu ổ chuột của những hậu duệ của tội phạm. Cậu căm ghét tầng lớp thượng lưu...",
         status: "Đang tiến hành",
         chapters: [
-            { name: "1", pageCount: 72 }, // name là tên thư mục chapter, vd: chapter_1
+            { name: "1", pageCount: 72 }, 
             { name: "2", pageCount: 41 },
             { name: "3", pageCount: 47 },
             { name: "4", pageCount: 26 },
