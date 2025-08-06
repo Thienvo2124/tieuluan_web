@@ -17,28 +17,8 @@
   gap: 10px;
 }
 
-.search-advanced-note {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
 
-.search-advanced-note .tick { color: #5fff7f; }
-.search-advanced-note .cross { color: #ff5f5f; }
-.search-advanced-note .neutral { color: #fff; }
 
-.hide-search-box {
-  background: #3ec6ff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 24px;
-  font-size: 16px;
-  cursor: pointer;
-}
 
 .reset-btn {
   background: #3ec6ff;

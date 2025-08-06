@@ -11,10 +11,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
- <header>
+  <header>
     <div class="header-top">
       <div class="logo">
-        <img src="img/logo_bocap.png" alt="Logo bocapTruyen">
+        <img src="webtruyen/Home/img/logo_bocap.png" alt="Logo bocapTruyen">
         <span>BOCAPTRUYEN</span>
       </div>
       <div class="search-box">
@@ -22,14 +22,27 @@
         <button aria-label="Tìm kiếm">🔍</button>
       </div>
       <div class="user-actions">
-        <a href="form_login_register.html" class="login">Đăng Nhập</a>
-
+        <a href="/webtruyen/Home/login.html" class="btn btn-secondary logged-out-only">Đăng Nhập</a>
+        <a href="/webtruyen/Home/register.html" class="btn btn-primary logged-out-only">Đăng Kí</a>
+        <div class="user-dropdown logged-in-only hidden">
+          <button id="user-menu-trigger" class="user-menu-button">
+            <span id="welcome-message"></span>
+            <span class="arrow-down"><img id="user_avatar" src="/webtruyen/Home/img/user_img.jpg"
+                alt="user_avatar"></span>
+          </button>
+          <div id="user-menu-content" class="dropdown-content">
+            <a href="/profile.html">Thông tin tài khoản</a>
+            <a href="/my-stories.html">Truyện theo dõi</a>
+            <a href="/webtruyen/admin/admin.html" id="admin-link" class="hidden">Trang Quản Trị</a>
+            <a href="#" id="logout-button">Đăng Xuất</a>
+          </div>
+        </div>
       </div>
     </div>
     <nav class="main-menu">
       <div class="hamburger">☰</div>
       <ul>
-        <li><a href="/index.html">Trang Chủ</a></li>
+        <li><a href="index.html">Trang Chủ</a></li>
         <li class="has-dropdown">
           <a href="#">Thể Loại</a>
           <div class="dropdown">
@@ -83,10 +96,10 @@
             </ul>
           </div>
         </li>
-        
+
         <li><a href="#">Lịch Sử</a></li>
         <li><a href="#">Theo Dõi</a></li>
-        <li><a href="timkiem_index.html">Tìm Truyện</a></li>
+        <li><a href="/webtruyen/Home/timtruyen.html">Tìm Truyện</a></li>
         <li><a href="#">Fanpage</a></li>
       </ul>
     </nav>
@@ -97,12 +110,7 @@
   <h2 class="search-advanced-title">
     <i class="fa fa-flag"></i> Tìm kiếm nâng cao
   </h2>
-  <div class="search-advanced-note">
-    <span class="tick">&#10003; Tìm trong những thể loại này</span><br>
-    <span class="cross">&#10007; Loại trừ những thể loại này</span><br>
-    <span class="neutral">&#9633; Truyện có thể thuộc hoặc không thuộc thể loại này</span>
-    <button class="hide-search-box">Ẩn khung tìm kiếm</button>
-  </div>
+  
   <button class="reset-btn">&#8635; Reset</button>
   <form class="search-advanced-form">
     <div class="genres-grid">
