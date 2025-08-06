@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     window.location.href = '../admin/admin.html';
                 } else {
                     // Trỏ về file index.html ở thư mục gốc
-                    window.location.href = '../../../index.html';
+                    window.location.href = '/index.html';
                 }
             } else {
                 alert('Tên đăng nhập hoặc mật khẩu không đúng!');

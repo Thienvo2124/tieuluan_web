@@ -1,93 +1,92 @@
-  <header>
-    <div class="header-top">
-      <div class="logo">
-        <img src="/webtruyen/Home/img/logo_bocap.png" alt="Logo bocapTruyen">
-        <span>BOCAPTRUYEN</span>
-      </div>
-      <div class="search-box">
-        <input type="text" placeholder="Tìm truyện..." aria-label="Tìm kiếm truyện">
-        <button aria-label="Tìm kiếm">🔍</button>
-      </div>
-      <div class="user-actions">
-        <a href="/webtruyen/Home/login.html" class="btn btn-secondary logged-out-only">Đăng Nhập</a>
-        <a href="/webtruyen/Home/register.html" class="btn btn-primary logged-out-only">Đăng Kí</a>
-        <div class="user-dropdown logged-in-only hidden">
-          <button id="user-menu-trigger" class="user-menu-button">
-            <span id="welcome-message"></span>
-            <span class="arrow-down"><img id="user_avatar" src="/webtruyen/Home/img/user_img.jpg"
-                alt="user_avatar"></span>
-          </button>
-          <div id="user-menu-content" class="dropdown-content">
-            <a href="/profile.html">Thông tin tài khoản</a>
-            <a href="/my-stories.html">Truyện theo dõi</a>
-            <a href="/webtruyen/admin/admin.html" id="admin-link" class="hidden">Trang Quản Trị</a>
-            <a href="#" id="logout-button">Đăng Xuất</a>
-          </div>
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <a href="/index.html"><img src="/webtruyen/Home/img/logo_bocap.png" alt="Logo bocapTruyen"></a>
+      <a href="/index.html"><span>BOCAPTRUYEN</span></a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Tìm truyện..." aria-label="Tìm kiếm truyện">
+      <button aria-label="Tìm kiếm">🔍</button>
+    </div>
+    <div class="user-actions">
+      <a href="/webtruyen/Home/login.html" class="btn btn-secondary logged-out-only">Đăng Nhập</a>
+      <a href="/webtruyen/Home/register.html" class="btn btn-primary logged-out-only">Đăng Kí</a>
+
+      <div class="user-dropdown logged-in-only hidden">
+        <img src="/webtruyen/Home/img/user_img.jpg" id="user_avatar" class="user-avatar-trigger" alt="Tài khoản">
+
+        <div id="user-menu-content" class="dropdown-content">
+          <a href="/profile.html">Thông tin tài khoản</a>
+          <a href="/my-stories.html">Truyện theo dõi</a>
+          <a href="/admin/admin.html" id="admin-link" class="hidden">Trang Quản Trị</a>
+          <a href="#" id="logout-button">Đăng Xuất</a>
         </div>
       </div>
     </div>
-    <nav class="main-menu">
-      <div class="hamburger">☰</div>
-      <ul>
-        <li><a href="/index.html">Trang Chủ</a></li>
-        <li class="has-dropdown">
-          <a href="#">Thể Loại</a>
-          <div class="dropdown">
-                   <ul class="theloai-list">
-          <li><a title="Action" href="/webtruyen/Home/the_loai/action.html">Action</a></li>
-          <li><a title="Adventure" href="/webtruyen/Home/the_loai/adventure.html">Adventure</a></li>
-          <li><a title="Anime" href="/webtruyen/Home/the_loai/anime.html">Anime</a></li>
-          <li><a title="Chuyển Sinh" href="/webtruyen/Home/the_loai/chuyen-sinh.html">Chuyển Sinh</a></li>
-          <li><a title="Cổ Đại" href="/webtruyen/Home/the_loai/co-dai.html">Cổ Đại</a></li>
-          <li><a title="Comedy" href="/webtruyen/Home/the_loai/comedy.html">Comedy</a></li>
-          <li><a title="Comic" href="/webtruyen/Home/the_loai/comic.html">Comic</a></li>
-          <li><a title="Demons" href="/webtruyen/Home/the_loai/demons.html">Demons</a></li>
-          <li><a title="Detective" href="/webtruyen/Home/the_loai/detective.html">Detective</a></li>
-          <li><a title="Doujinshi" href="/webtruyen/Home/the_loai/doujinshi.html">Doujinshi</a></li>
-          <li><a title="Drama" href="/webtruyen/Home/the_loai/drama.html">Drama</a></li>
-          <li><a title="Fantasy" href="/webtruyen/Home/the_loai/fantasy.html">Fantasy</a></li>
-          <li><a title="Gender Bender" href="/webtruyen/Home/the_loai/gender-bender.html">Gender Bender</a></li>
-          <li><a title="Harem" href="/webtruyen/Home/the_loai/harem.html">Harem</a></li>
-          <li><a title="Historical" href="/webtruyen/Home/the_loai/historical.html">Historical</a></li>
-          <li><a title="Horror" href="/webtruyen/Home/the_loai/horror.html">Horror</a></li>
-          <li><a title="Huyền Huyễn" href="/webtruyen/Home/the_loai/huyen-huyen.html">Huyền Huyễn</a></li>
-          <li><a title="Isekai" href="/webtruyen/Home/the_loai/isekai.html">Isekai</a></li>
-          <li><a title="Josei" href="/webtruyen/Home/the_loai/josei.html">Josei</a></li>
-          <li><a title="Mafia" href="/webtruyen/Home/the_loai/mafia.html">Mafia</a></li>
-          <li><a title="Magic" href="/webtruyen/Home/the_loai/magic.html">Magic</a></li>
-          <li><a title="Manga" href="/webtruyen/Home/the_loai/manga.html">Manga</a></li>
-          <li><a title="Manhua" href="/webtruyen/Home/the_loai/manhua.html">Manhua</a></li>
-          <li><a title="Manhwa" href="/webtruyen/Home/the_loai/manhwa.html">Manhwa</a></li>
-          <li><a title="Martial Arts" href="/webtruyen/Home/the_loai/martial-arts.html">Martial Arts</a></li>
-          <li><a title="Military" href="/webtruyen/Home/the_loai/military.html">Military</a></li>
-          <li><a title="Mystery" href="/webtruyen/Home/the_loai/mystery.html">Mystery</a></li>
-          <li><a title="Ngôn Tình" href="/webtruyen/Home/the_loai/ngon-tinh.html">Ngôn Tình</a></li>
-          <li><a title="One shot" href="/webtruyen/Home/the_loai/one-shot.html">One shot</a></li>
-          <li><a title="Psychological" href="/webtruyen/Home/the_loai/psychological.html">Psychological</a></li>
-          <li><a title="Romance" href="/webtruyen/Home/the_loai/romance.html">Romance</a></li>
-          <li><a title="School Life" href="/webtruyen/Home/the_loai/school-life.html">School Life</a></li>
-          <li><a title="Sci-fi" href="/webtruyen/Home/the_loai/sci-fi.html">Sci-fi</a></li>
-          <li><a title="Seinen" href="/webtruyen/Home/the_loai/seinen.html">Seinen</a></li>
-          <li><a title="Shoujo" href="/webtruyen/Home/the_loai/shoujo.html">Shoujo</a></li>
-          <li><a title="Shoujo Ai" href="/webtruyen/Home/the_loai/shoujo-ai.html">Shoujo Ai</a></li>
-          <li><a title="Shounen" href="/webtruyen/Home/the_loai/shounen.html">Shounen</a></li>
-          <li><a title="Shounen Ai" href="/webtruyen/Home/the_loai/shounen-ai.html">Shounen Ai</a></li>
-          <li><a title="Slice of life" href="/webtruyen/Home/the_loai/slice-of-life.html">Slice of life</a></li>
-          <li><a title="Sports" href="/webtruyen/Home/the_loai/sports.html">Sports</a></li>
-          <li><a title="Supernatural" href="/webtruyen/Home/the_loai/supernatural.html">Supernatural</a></li>
-          <li><a title="Tragedy" href="/webtruyen/Home/the_loai/tragedy.html">Tragedy</a></li>
-          <li><a title="Trọng Sinh" href="/webtruyen/Home/the_loai/trong-sinh.html">Trọng Sinh</a></li>
-          <li><a title="Truyện Màu" href="/webtruyen/Home/the_loai/truyen-mau.html">Truyện Màu</a></li>
-          <li><a title="Webtoon" href="/webtruyen/Home/the_loai/webtoon.html">Webtoon</a></li>
-          <li><a title="Xuyên Không" href="/webtruyen/Home/the_loai/xuyen-khong.html">Xuyên Không</a></li>
-        </ul>
-          </div>
-        </li>
+  </div>
+  </div>
+  <nav class="main-menu">
+    <div class="hamburger">☰</div>
+    <ul>
+      <li><a href="/index.html">Trang Chủ</a></li>
+      <li class="has-dropdown">
+        <a href="#">Thể Loại</a>
+        <div class="dropdown">
+          <ul class="theloai-list">
+            <li><a title="Action" href="/webtruyen/Home/the_loai/action.html">Action</a></li>
+            <li><a title="Adventure" href="/webtruyen/Home/the_loai/adventure.html">Adventure</a></li>
+            <li><a title="Anime" href="/webtruyen/Home/the_loai/anime.html">Anime</a></li>
+            <li><a title="Chuyển Sinh" href="/webtruyen/Home/the_loai/chuyen-sinh.html">Chuyển Sinh</a></li>
+            <li><a title="Cổ Đại" href="/webtruyen/Home/the_loai/co-dai.html">Cổ Đại</a></li>
+            <li><a title="Comedy" href="/webtruyen/Home/the_loai/comedy.html">Comedy</a></li>
+            <li><a title="Comic" href="/webtruyen/Home/the_loai/comic.html">Comic</a></li>
+            <li><a title="Demons" href="/webtruyen/Home/the_loai/demons.html">Demons</a></li>
+            <li><a title="Detective" href="/webtruyen/Home/the_loai/detective.html">Detective</a></li>
+            <li><a title="Doujinshi" href="/webtruyen/Home/the_loai/doujinshi.html">Doujinshi</a></li>
+            <li><a title="Drama" href="/webtruyen/Home/the_loai/drama.html">Drama</a></li>
+            <li><a title="Fantasy" href="/webtruyen/Home/the_loai/fantasy.html">Fantasy</a></li>
+            <li><a title="Gender Bender" href="/webtruyen/Home/the_loai/gender-bender.html">Gender Bender</a></li>
+            <li><a title="Harem" href="/webtruyen/Home/the_loai/harem.html">Harem</a></li>
+            <li><a title="Historical" href="/webtruyen/Home/the_loai/historical.html">Historical</a></li>
+            <li><a title="Horror" href="/webtruyen/Home/the_loai/horror.html">Horror</a></li>
+            <li><a title="Huyền Huyễn" href="/webtruyen/Home/the_loai/huyen-huyen.html">Huyền Huyễn</a></li>
+            <li><a title="Isekai" href="/webtruyen/Home/the_loai/isekai.html">Isekai</a></li>
+            <li><a title="Josei" href="/webtruyen/Home/the_loai/josei.html">Josei</a></li>
+            <li><a title="Mafia" href="/webtruyen/Home/the_loai/mafia.html">Mafia</a></li>
+            <li><a title="Magic" href="/webtruyen/Home/the_loai/magic.html">Magic</a></li>
+            <li><a title="Manga" href="/webtruyen/Home/the_loai/manga.html">Manga</a></li>
+            <li><a title="Manhua" href="/webtruyen/Home/the_loai/manhua.html">Manhua</a></li>
+            <li><a title="Manhwa" href="/webtruyen/Home/the_loai/manhwa.html">Manhwa</a></li>
+            <li><a title="Martial Arts" href="/webtruyen/Home/the_loai/martial-arts.html">Martial Arts</a></li>
+            <li><a title="Military" href="/webtruyen/Home/the_loai/military.html">Military</a></li>
+            <li><a title="Mystery" href="/webtruyen/Home/the_loai/mystery.html">Mystery</a></li>
+            <li><a title="Ngôn Tình" href="/webtruyen/Home/the_loai/ngon-tinh.html">Ngôn Tình</a></li>
+            <li><a title="One shot" href="/webtruyen/Home/the_loai/one-shot.html">One shot</a></li>
+            <li><a title="Psychological" href="/webtruyen/Home/the_loai/psychological.html">Psychological</a></li>
+            <li><a title="Romance" href="/webtruyen/Home/the_loai/romance.html">Romance</a></li>
+            <li><a title="School Life" href="/webtruyen/Home/the_loai/school-life.html">School Life</a></li>
+            <li><a title="Sci-fi" href="/webtruyen/Home/the_loai/sci-fi.html">Sci-fi</a></li>
+            <li><a title="Seinen" href="/webtruyen/Home/the_loai/seinen.html">Seinen</a></li>
+            <li><a title="Shoujo" href="/webtruyen/Home/the_loai/shoujo.html">Shoujo</a></li>
+            <li><a title="Shoujo Ai" href="/webtruyen/Home/the_loai/shoujo-ai.html">Shoujo Ai</a></li>
+            <li><a title="Shounen" href="/webtruyen/Home/the_loai/shounen.html">Shounen</a></li>
+            <li><a title="Shounen Ai" href="/webtruyen/Home/the_loai/shounen-ai.html">Shounen Ai</a></li>
+            <li><a title="Slice of life" href="/webtruyen/Home/the_loai/slice-of-life.html">Slice of life</a></li>
+            <li><a title="Sports" href="/webtruyen/Home/the_loai/sports.html">Sports</a></li>
+            <li><a title="Supernatural" href="/webtruyen/Home/the_loai/supernatural.html">Supernatural</a></li>
+            <li><a title="Tragedy" href="/webtruyen/Home/the_loai/tragedy.html">Tragedy</a></li>
+            <li><a title="Trọng Sinh" href="/webtruyen/Home/the_loai/trong-sinh.html">Trọng Sinh</a></li>
+            <li><a title="Truyện Màu" href="/webtruyen/Home/the_loai/truyen-mau.html">Truyện Màu</a></li>
+            <li><a title="Webtoon" href="/webtruyen/Home/the_loai/webtoon.html">Webtoon</a></li>
+            <li><a title="Xuyên Không" href="/webtruyen/Home/the_loai/xuyen-khong.html">Xuyên Không</a></li>
+          </ul>
+        </div>
+      </li>
 
-        <li><a href="#">Lịch Sử</a></li>
-        <li><a href="#">Theo Dõi</a></li>
-        <li><a href="/webtruyen/Home/timtruyen.html">Tìm Truyện</a></li>
-        <li><a href="#">Fanpage</a></li>
-      </ul>
-    </nav>
-  </header>
+      <li><a href="#">Lịch Sử</a></li>
+      <li><a href="#">Theo Dõi</a></li>
+      <li><a href="/webtruyen/Home/timtruyen.html">Tìm Truyện</a></li>
+      <li><a href="#">Fanpage</a></li>
+    </ul>
+  </nav>
+</header>
