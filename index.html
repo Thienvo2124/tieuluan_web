@@ -7,7 +7,7 @@
   <meta name="description" content="Đọc truyện tranh online miễn phí tại BOCAPTRUYEN">
   <title>Đọc truyện tranh Manhwa, Manga, Manhua Online</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="../webtruyen/Home/css/trangchu_style.css">
+  <link rel="stylesheet" href="/webtruyen/Home/css/trangchu_style.css">
   <link rel="stylesheet" href="/webtruyen/Home/css/Reset.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -24,8 +24,21 @@
         <button aria-label="Tìm kiếm">🔍</button>
       </div>
       <div class="user-actions">
-        <a href="/webtruyen/Home/login.html" class="btn btn-secondary">Đăng Nhập</a>
-        <a href="/webtruyen/Home/register.html" class="btn btn-primary">Đăng Kí</a>
+        <a href="/webtruyen/Home/login.html" class="btn btn-secondary logged-out-only">Đăng Nhập</a>
+        <a href="/webtruyen/Home/register.html" class="btn btn-primary logged-out-only">Đăng Kí</a>
+        <div class="user-dropdown logged-in-only hidden">
+          <button id="user-menu-trigger" class="user-menu-button">
+            <span id="welcome-message"></span>
+            <span class="arrow-down"><img id="user_avatar" src="/webtruyen/Home/img/user_img.jpg"
+                alt="user_avatar"></span>
+          </button>
+          <div id="user-menu-content" class="dropdown-content">
+            <a href="/profile.html">Thông tin tài khoản</a>
+            <a href="/my-stories.html">Truyện theo dõi</a>
+            <a href="/webtruyen/admin/admin.html" id="admin-link" class="hidden">Trang Quản Trị</a>
+            <a href="#" id="logout-button">Đăng Xuất</a>
+          </div>
+        </div>
       </div>
     </div>
     <nav class="main-menu">
@@ -127,7 +140,8 @@
 
         <a href="/webtruyen/Home/info_truyen/truyen-Tao Muốn Trở Thành Chúa Tể Bóng Tối!!.html" class="truyen-item"
           style="text-decoration: none; color: inherit;">
-          <img src="/webtruyen/Home/img/img_truyen/Tao Muốn Trở Thành Chúa Tể Bóng Tối!!/tao-muon-tro-thanh-chua-te-bong-toi_1546992987.jpg"
+          <img
+            src="/webtruyen/Home/img/img_truyen/Tao Muốn Trở Thành Chúa Tể Bóng Tối!!/tao-muon-tro-thanh-chua-te-bong-toi_1546992987.jpg"
             alt="Tao Muốn Trở Thành Chúa Tể Bóng Tối!!">
           <p class="ten">Tao Muốn Trở Thành Chúa Tể Bóng Tối!!</p>
           <p class="chuong">Chương 1</p>
@@ -138,6 +152,7 @@
             <img src="/webtruyen/Home/img/img_truyen/Gacha Vô Hạn/gacha-vo-han_1672285600.jpg" alt="Gacha Vô Hạn">
             <p class="ten">Gacha Vô Hạn</p>
             <p class="chuong">Chương 2</p>
+<<<<<<< HEAD
           </a>
           <a href="/webtruyen/Home/info_truyen/truyen-Hôm Nay - Tôi Hóa Kaiju.html" class="truyen-item"
             style="text-decoration: none; color: inherit;">
@@ -167,15 +182,46 @@
             <p class="ten">Rebuild World</p>
             <p class="chuong">Chương 1</p>
             </a>
+=======
 
-            <!-- Các truyện khác tương tự -->
+            <a href="/webtruyen/Home/info_truyen/truyen-Hôm Nay - Tôi Hóa Kaiju.html" class="truyen-item"
+              style="text-decoration: none; color: inherit;">
+              <img src="/webtruyen/Home/img/img_truyen/Hôm Nay - Tôi Hóa Kaiju/hom-nay-toi-hoa-kaiju_1595055488.jpg"
+                alt="Gacha Vô Hạn">
+              <p class="ten">Hôm Nay - Tôi Hóa Kaiju</p>
+              <p class="chuong">Chương 10</p>
+
+
+              <a href="/webtruyen/Home/info_truyen/truyen-Gachi Akuta.html" class="truyen-item"
+                style="text-decoration: none; color: inherit;">
+                <img src="/webtruyen/Home/img/img_truyen/Gachi Akuta/gachiakuta_1663074350.jpg" alt="Gachi Akuta">
+                <p class="ten">Gachi Akuta</p>
+                <p class="chuong">Chương 10</p>
+
+                <a href="/webtruyen/Home/info_truyen/truyen-Lúc Đó, Tôi Đã Chuyển Sinh Thành Slime.html"
+                  class="truyen-item" style="text-decoration: none; color: inherit;">
+                  <img
+                    src="/webtruyen/Home/img/img_truyen/Lúc Đó, Tôi Đã Chuyển Sinh Thành Slime/tensei-shitara-slime-datta-ken_1447076423.jpg"
+                    alt="Gachi Akuta">
+                  <p class="ten">Lúc Đó, Tôi Đã Chuyển Sinh Thành Slime</p>
+                  <p class="chuong">Chương 1</p>
+>>>>>>> 4de7bfce0c3e7c5a99165a01f848c8d7b22c027a
+
+                  <a href="/webtruyen/Home/info_truyen/truyen-Rebuild World.html" class="truyen-item"
+                    style="text-decoration: none; color: inherit;">
+                    <img src="/webtruyen/Home/img/img_truyen/Rebuild World/rebuild-world_1565070595.jpg"
+                      alt="Rebuild World">
+                    <p class="ten">Rebuild World</p>
+                    <p class="chuong">Chương 1</p>
+
+                    <!-- Các truyện khác tương tự -->
       </div>
 
 
     </section>
 
   </div>
-
+  <script src="/webtruyen/Home/js/main.js"></script>
 </body>
 
 </html>
