@@ -1,126 +1,126 @@
-// File: js/quanlynguoidung.js - PHIÊN BẢN NÂNG CẤP CÓ CHỨC NĂNG SỬA
-
 document.addEventListener("DOMContentLoaded", function () {
-    // === KHỞI TẠO ===
+    // === KHAI BÁO BIẾN ===
     const userListBody = document.getElementById("user-list-body");
-    const addUserForm = document.getElementById("form-add-user");
-    const addUserButton = document.querySelector(".btn-add");
+    const userForm = document.getElementById("user-form");
+    const showAddFormBtn = document.getElementById("show-add-form-btn");
+    const cancelBtn = document.getElementById("cancel-btn");
+    const formTitle = document.getElementById("form-title");
 
-    // Các phần tử của Modal Sửa
-    const editModal = document.getElementById('edit-user-modal');
-    const editForm = document.getElementById('form-edit-user');
-    const closeModalButton = document.querySelector('.close-button');
-
+    // Lấy dữ liệu từ localStorage
     let users = JSON.parse(localStorage.getItem('users_db')) || [];
     const saveUsers = () => localStorage.setItem('users_db', JSON.stringify(users));
 
-    // === HÀM HIỂN THỊ DỮ LIỆU (READ) ===
-    function renderUserTable() {
+    // === CÁC HÀM ===
+
+    // Hàm hiển thị lại bảng
+    function renderTable() {
         userListBody.innerHTML = '';
         const loggedInAdmin = JSON.parse(sessionStorage.getItem('loggedInUser'));
-
         users.forEach(user => {
             const row = document.createElement("tr");
-            const deleteButtonDisabled = (loggedInAdmin && loggedInAdmin.username === user.username) ? 'disabled' : '';
-
+            const isCurrentUserAdmin = loggedInAdmin && loggedInAdmin.username === user.username;
+            const deleteButtonState = isCurrentUserAdmin ? 'disabled' : '';
             row.innerHTML = `
                 <td>${user.username}</td>
                 <td>${user.role}</td>
                 <td class="action-buttons">
                     <button class="btn-edit" data-username="${user.username}">Sửa</button>
-                    <button class="btn-delete" data-username="${user.username}" ${deleteButtonDisabled}>Xóa</button>
+                    <button class="btn-delete" data-username="${user.username}" ${deleteButtonState}>Xóa</button>
                 </td>
             `;
             userListBody.appendChild(row);
         });
-        attachEventListeners();
+        attachActionListeners();
     }
 
-    // === CÁC HÀM XỬ LÝ SỰ KIỆN ===
-
-    // HÀM GÁN LẠI CÁC SỰ KIỆN SAU MỖI LẦN RENDER
-    function attachEventListeners() {
-        // Sự kiện Xóa
+    // Gán sự kiện cho các nút Sửa/Xóa trong bảng
+    function attachActionListeners() {
         document.querySelectorAll(".btn-delete").forEach(button => {
-            button.addEventListener("click", function () {
-                const usernameToDelete = this.dataset.username;
-                if (confirm(`Bạn có chắc muốn xóa người dùng "${usernameToDelete}" không?`)) {
-                    users = users.filter(user => user.username !== usernameToDelete);
+            button.addEventListener("click", (e) => {
+                const username = e.target.dataset.username;
+                if (confirm(`Bạn có chắc muốn xóa người dùng "${username}" không?`)) {
+                    users = users.filter(user => user.username !== username);
                     saveUsers();
-                    renderUserTable();
+                    renderTable();
                 }
             });
         });
 
-        // Sự kiện Sửa
         document.querySelectorAll(".btn-edit").forEach(button => {
-            button.addEventListener("click", function () {
-                const usernameToEdit = this.dataset.username;
-                openEditModal(usernameToEdit);
+            button.addEventListener("click", (e) => {
+                const username = e.target.dataset.username;
+                openForm('edit', username);
             });
         });
     }
 
-    // HÀM MỞ MODAL VÀ ĐIỀN DỮ LIỆU
-    function openEditModal(username) {
-        const user = users.find(u => u.username === username);
-        if (user) {
-            document.getElementById('edit-username-hidden').value = user.username;
-            document.getElementById('edit-username-display').value = user.username;
-            document.getElementById('edit-password').value = ''; // Luôn để trống mật khẩu
-            document.getElementById('edit-role').value = user.role;
-            editModal.classList.remove('hidden');
+    // Hàm mở form (cho cả Thêm và Sửa)
+    function openForm(mode, username = null) {
+        formTitle.textContent = mode === 'add' ? "Thêm người dùng mới" : "Sửa thông tin người dùng";
+        const usernameInput = document.getElementById("user-username");
+
+        if (mode === 'edit') {
+            const user = users.find(u => u.username === username);
+            document.getElementById("user-username-hidden").value = user.username;
+            usernameInput.value = user.username;
+            usernameInput.disabled = true; // Không cho sửa username
+            document.getElementById("user-password").placeholder = "Để trống nếu không đổi";
+            document.getElementById("user-role").value = user.role;
+        } else {
+            userForm.reset();
+            usernameInput.disabled = false;
+            document.getElementById("user-password").placeholder = "";
+            document.getElementById("user-username-hidden").value = '';
         }
+
+        userForm.classList.remove('hidden');
+        showAddFormBtn.classList.add('hidden');
     }
 
-    // HÀM ĐÓNG MODAL
-    function closeEditModal() {
-        editModal.classList.add('hidden');
+    // Hàm đóng và reset form
+    function closeForm() {
+        userForm.reset();
+        userForm.classList.add('hidden');
+        showAddFormBtn.classList.remove('hidden');
     }
 
-    // Sự kiện submit form Thêm
-    addUserForm.addEventListener('submit', function (e) { /* ... code cũ không đổi ... */ });
+    // === GÁN SỰ KIỆN ===
 
-    // === CÁC SỰ KIỆN CỦA MODAL ===
-    // Nút X để đóng
-    closeModalButton.addEventListener('click', closeEditModal);
-    // Click ra ngoài để đóng
-    window.addEventListener('click', function (event) {
-        if (event.target == editModal) {
-            closeEditModal();
-        }
-    });
+    // Nút "+ Thêm người dùng mới"
+    showAddFormBtn.addEventListener('click', () => openForm('add'));
 
-    // Sự kiện submit form Sửa (UPDATE)
-    editForm.addEventListener('submit', function (e) {
+    // Nút "Hủy" trên form
+    cancelBtn.addEventListener('click', closeForm);
+
+    // Sự kiện submit form (Xử lý cả Thêm và Sửa)
+    userForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const username = document.getElementById('edit-username-hidden').value;
-        const newPassword = document.getElementById('edit-password').value;
-        const newRole = document.getElementById('edit-role').value;
+        const usernameHidden = document.getElementById("user-username-hidden").value;
+        const username = document.getElementById("user-username").value;
+        const password = document.getElementById("user-password").value;
+        const role = document.getElementById("user-role").value;
 
-        // Tìm vị trí của user trong mảng
-        const userIndex = users.findIndex(u => u.username === username);
-
-        if (userIndex > -1) {
-            // Chỉ cập nhật mật khẩu nếu người dùng nhập mật khẩu mới
-            if (newPassword.trim() !== '') {
-                users[userIndex].password = newPassword.trim();
+        if (usernameHidden) { // --- Chế độ SỬA ---
+            const userIndex = users.findIndex(u => u.username === usernameHidden);
+            if (password.trim() !== '') {
+                users[userIndex].password = password.trim();
             }
-            // Cập nhật vai trò
-            users[userIndex].role = newRole;
-
-            saveUsers();
-            alert(`Đã cập nhật thông tin cho người dùng "${username}"!`);
-            closeEditModal();
-            renderUserTable();
+            users[userIndex].role = role;
+            alert(`Đã cập nhật người dùng "${usernameHidden}"!`);
+        } else { // --- Chế độ THÊM ---
+            if (users.some(user => user.username === username.trim())) {
+                alert("Tên đăng nhập này đã tồn tại!");
+                return;
+            }
+            users.push({ username: username.trim(), password: password.trim(), role });
+            alert(`Đã thêm người dùng "${username.trim()}"!`);
         }
+
+        saveUsers();
+        renderTable();
+        closeForm();
     });
 
-    // ... Các sự kiện khác như nút "+ Thêm người dùng" (giữ nguyên code cũ) ...
-    addUserButton.addEventListener("click", function () {
-        addUserForm.style.display = (addUserForm.style.display === "none") ? "block" : "none";
-    });
-
-    // === CHẠY LẦN ĐẦU TIÊN ===
-    renderUserTable();
+    // === CHẠY BAN ĐẦU ===
+    renderTable();
 });

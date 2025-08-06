@@ -1,80 +1,156 @@
-/* Bảng danh sách truyện */
-.truyen-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #fff;
-}
+/* css/quanlytruyen_style.css */
 
-.truyen-table th,
-.truyen-table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
-
-.truyen-table th {
-  background-color: #f4f4f4;
-}
-
-.truyen-table tr:hover {
-  background-color: #f9f9f9;
-}
-
-/* Nút hành động */
-.action-buttons button {
-  margin-right: 8px;
-  padding: 6px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn-edit {
-  background-color: #2196F3;
-  color: #fff;
-}
-
-.btn-delete {
-  background-color: #f44336;
-  color: #fff;
-}
-
-.btn-edit:hover {
-  background-color: #1976D2;
-}
-
-.btn-delete:hover {
-  background-color: #d32f2f;
-}
+/* Nút bấm chính */
 .btn-add {
-  background-color: #4CAF50;
+  background-color: #28a745;
   color: white;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border: none;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-add:hover {
-  background-color: #45a049;
+  background-color: #218838;
 }
-#form-them-truyen input {
-  padding: 6px;
-  margin: 4px;
+
+/* Form chung */
+.admin-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.admin-form.hidden {
+  display: none;
+}
+
+.admin-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.admin-form .input-group {
+  margin-bottom: 15px;
+}
+
+.admin-form .input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.admin-form .input-group input,
+.admin-form .input-group textarea {
+  width: 100%;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
-#form-them-truyen button {
-  padding: 6px 10px;
-  background-color: #4CAF50;
-  color: white;
+.admin-form .form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-form .button-submit,
+.admin-form .button-cancel {
+  padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-#form-them-truyen button:hover {
-  background-color: #45a049;
+.admin-form .button-submit {
+  background-color: #007bff;
+  color: white;
+}
+
+.admin-form .button-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Bảng dữ liệu */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+}
+
+.data-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table img {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* =================================== */
+/* ==   STYLE MỚI CHO NÚT SỬA/XÓA   == */
+/* =================================== */
+
+/* Style chung cho các nút trong bảng */
+.data-table .action-buttons button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.data-table .action-buttons button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  /* Hiệu ứng nhấc lên khi hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Tắt hiệu ứng cho nút bị vô hiệu hóa */
+.data-table .action-buttons button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.data-table .action-buttons button:disabled:hover {
+  opacity: 1;
+}
+
+
+/* Style riêng cho nút SỬA (màu xanh) */
+.data-table .btn-edit {
+  background-color: #007bff;
+}
+
+/* Style riêng cho nút XÓA (màu đỏ) */
+.data-table .btn-delete {
+  background-color: #dc3545;
 }

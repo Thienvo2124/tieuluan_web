@@ -3,13 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Quản Lý Truyện</title>
-
-  <!-- CSS cho bố cục admin chung -->
-  <link rel="stylesheet" href="css/admin_style.css">
-
-  <!-- CSS dành riêng cho trang Quản lý truyện -->
-  <link rel="stylesheet" href="css/quanlytruyen_style.css">
+  <title>Quản Lý Người Dùng</title>
+  <link rel="stylesheet" href="/webtruyen/admin/css/admin_style.css">
+  <link rel="stylesheet" href="/webtruyen/admin/css/quanlytruyen_style.css">
 </head>
 
 <body>
@@ -19,66 +15,41 @@
       <ul class="menu">
         <li><a href="admin.html">🏠 Tổng Quan</a></li>
         <li><a href="quanlytruyen.html">📚 Quản Lý Truyện</a></li>
-        <li class="active"><a href="#">👥 Quản Lý Người Dùng</a></li>
-        <li><a href="../../index.html">🚪 Đăng Xuất</a></li>
+        <li class="active"><a href="quanlynguoidung.html">👥 Quản Lý Người Dùng</a></li>
+        <li><a href="#" id="admin-logout-button">🚪 Đăng Xuất</a></li>
       </ul>
     </aside>
 
     <main class="main-content">
-      <h1>📚 Quản lí người dùng</h1>
-      <button class="btn-add">+ Thêm người dùng</button>
-      <!-- FORM THÊM TRUYỆN  -->
-      <form id="form-add-user" class="admin-form" style="display: none; margin-bottom: 20px;">
-        <h3>Thêm người dùng mới</h3>
+      <h1>👥 Quản lý người dùng</h1>
+      <button id="show-add-form-btn" class="btn btn-add">+ Thêm người dùng mới</button>
+
+      <form id="user-form" class="admin-form hidden">
+        <input type="hidden" id="user-username-hidden">
+        <h3 id="form-title">Thêm người dùng mới</h3>
+
         <div class="input-group">
-          <label for="add-username">Tên đăng nhập</label>
-          <input type="text" id="add-username" required>
+          <label for="user-username">Tên đăng nhập</label>
+          <input type="text" id="user-username" required>
         </div>
         <div class="input-group">
-          <label for="add-password">Mật khẩu</label>
-          <input type="password" id="add-password" required>
+          <label for="user-password">Mật khẩu</label>
+          <input type="password" id="user-password" placeholder="Để trống nếu không muốn đổi">
         </div>
         <div class="input-group">
-          <label for="add-role">Vai trò</label>
-          <select id="add-role">
+          <label for="user-role">Vai trò</label>
+          <select id="user-role">
             <option value="user">User</option>
             <option value="admin">Admin</option>
           </select>
         </div>
-        <button type="submit" class="button-submit">Lưu người dùng</button>
-      </form>
-      <div id="edit-user-modal" class="modal hidden">
-        <div class="modal-content">
-          <span class="close-button">&times;</span>
-          <h2>Sửa thông tin người dùng</h2>
-          <form id="form-edit-user">
-            <input type="hidden" id="edit-username-hidden">
-
-            <div class="input-group">
-              <label for="edit-username-display">Tên đăng nhập</label>
-              <input type="text" id="edit-username-display" disabled>
-            </div>
-
-            <div class="input-group">
-              <label for="edit-password">Mật khẩu mới (để trống nếu không đổi)</label>
-              <input type="password" id="edit-password" placeholder="Nhập mật khẩu mới">
-            </div>
-
-            <div class="input-group">
-              <label for="edit-role">Vai trò</label>
-              <select id="edit-role">
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
-            </div>
-
-            <button type="submit" class="button-submit">Lưu thay đổi</button>
-          </form>
+        <div class="form-actions">
+          <button type="submit" class="button-submit btn-blue">Lưu</button>
+          <button type="button" id="cancel-btn" class="button-cancel btn-gray">Hủy</button>
         </div>
-      </div>
+      </form>
 
-      <table class="truyen-table">
-
+      <table class="data-table">
         <thead>
           <tr>
             <th>Tên đăng nhập (Username)</th>
@@ -88,16 +59,11 @@
         </thead>
         <tbody id="user-list-body">
         </tbody>
-        </thead>
-        <!-- danh sách truyện -->
-
-        <tbody>
-          <!-- Các dòng truyện sẽ được thêm vào đây -->
-        </tbody>
       </table>
     </main>
   </div>
-  <script src="js/quanlinguoidung.js"></script>
+
+  <script src="/webtruyen/admin/js/quanlinguoidung.js"></script>
 </body>
 
 </html>

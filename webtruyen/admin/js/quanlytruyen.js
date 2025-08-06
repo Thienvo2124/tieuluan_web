@@ -1,76 +1,118 @@
-// Khi trang tải xong
+// js/quanlytruyen.js
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Bắt sự kiện nút "+ Thêm truyện"
-  document.querySelector(".btn-add").addEventListener("click", function () {
-    const form = document.getElementById("form-them-truyen");
-    form.style.display = (form.style.display === "none") ? "block" : "none";
-  });
+  // === KHAI BÁO BIẾN ===
+  const storyListBody = document.getElementById("story-list-body");
+  const storyForm = document.getElementById("story-form");
+  const showAddFormBtn = document.getElementById("show-add-form-btn");
+  const cancelBtn = document.getElementById("cancel-btn");
+  const formTitle = document.getElementById("form-title");
 
-  // Gắn sự kiện xóa cho các truyện có sẵn
-  document.querySelectorAll(".btn-delete").forEach(function (button) {
-    button.addEventListener("click", function () {
-      if (confirm("Bạn có chắc muốn xóa truyện này không?")) {
-        this.closest("tr").remove();
-      }
+  // Lấy dữ liệu từ localStorage
+  let stories = JSON.parse(localStorage.getItem('stories_db')) || [];
+  const saveStories = () => localStorage.setItem('stories_db', JSON.stringify(stories));
+
+  // === CÁC HÀM ===
+
+  // Hàm hiển thị bảng
+  function renderTable() {
+    storyListBody.innerHTML = '';
+    stories.forEach(story => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+                <td>${story.id}</td>
+                <td><img src="${story.coverImage}" alt="${story.title}"></td>
+                <td>${story.title}</td>
+                <td>${story.author}</td>
+                <td class="action-buttons">
+                    <button class="btn-edit" data-id="${story.id}">Sửa</button>
+                    <button class="btn-delete" data-id="${story.id}">Xóa</button>
+                </td>
+            `;
+      storyListBody.appendChild(row);
     });
-  });
-
-  // ✅ Gắn sự kiện đăng xuất bên trong DOMContentLoaded
-  const logoutBtn = document.getElementById("btnLogout");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (confirm("Bạn có chắc chắn muốn đăng xuất?")) {
-        window.location.href = "../trangchu_index.html";
-      }
-    });
-  }
-});
-
-
-// Hàm thêm truyện
-function themTruyen() {
-  const tenTruyen = document.getElementById("tenTruyen").value;
-  const tacGia = document.getElementById("tacGia").value;
-  const soChuong = document.getElementById("soChuong").value;
-  const trangThai = document.getElementById("trangThai").value;
-  const linkAnh = document.getElementById("linkAnh").value;
-
-  // Kiểm tra nếu thiếu thông tin
-  if (!tenTruyen || !tacGia || !soChuong || !trangThai || !linkAnh) {
-    alert("Vui lòng điền đầy đủ thông tin truyện.");
-    return;
+    attachActionListeners();
   }
 
-  const table = document.querySelector(".truyen-table tbody");
-  const row = document.createElement("tr");
-  row.innerHTML = `
-    <td><img src="${linkAnh}" width="60" alt="${tenTruyen}"></td>
-    <td>${tenTruyen}</td>
-    <td>${tacGia}</td>
-    <td>${soChuong}</td>
-    <td>${trangThai}</td>
-    <td class="action-buttons">
-      <button class="btn-edit">Sửa</button>
-      <button class="btn-delete">Xóa</button>
-    </td>
-  `;
+  // Gán sự kiện cho nút Sửa/Xóa
+  function attachActionListeners() {
+    document.querySelectorAll(".btn-delete").forEach(button => {
+      button.addEventListener("click", (e) => {
+        const storyId = Number(e.target.dataset.id);
+        if (confirm("Bạn có chắc muốn xóa truyện này không?")) {
+          stories = stories.filter(story => story.id !== storyId);
+          saveStories();
+          renderTable();
+        }
+      });
+    });
 
-  table.appendChild(row);
+    document.querySelectorAll(".btn-edit").forEach(button => {
+      button.addEventListener("click", (e) => {
+        const storyId = Number(e.target.dataset.id);
+        const storyToEdit = stories.find(story => story.id === storyId);
+        if (storyToEdit) {
+          formTitle.textContent = "Sửa truyện";
+          document.getElementById("story-id").value = storyToEdit.id;
+          document.getElementById("story-title").value = storyToEdit.title;
+          document.getElementById("story-author").value = storyToEdit.author;
+          document.getElementById("story-cover").value = storyToEdit.coverImage;
+          document.getElementById("story-desc").value = storyToEdit.description;
+          storyForm.classList.remove('hidden');
+          showAddFormBtn.classList.add('hidden');
+        }
+      });
+    });
+  }
 
-  // Gắn sự kiện xóa cho nút Xóa vừa tạo
-  row.querySelector(".btn-delete").addEventListener("click", function () {
-    if (confirm("Bạn có chắc muốn xóa truyện này không?")) {
-      this.closest("tr").remove();
+  // Sự kiện submit form (cho cả Thêm và Sửa)
+  storyForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = Number(document.getElementById("story-id").value);
+    const storyData = {
+      title: document.getElementById("story-title").value,
+      author: document.getElementById("story-author").value,
+      coverImage: document.getElementById("story-cover").value,
+      description: document.getElementById("story-desc").value,
+      // (Bạn có thể thêm các trường khác ở đây)
+    };
+
+    if (id) { // Nếu có ID -> Sửa
+      const storyIndex = stories.findIndex(story => story.id === id);
+      stories[storyIndex] = { ...stories[storyIndex], ...storyData };
+      alert("Đã cập nhật truyện thành công!");
+    } else { // Nếu không có ID -> Thêm mới
+      storyData.id = new Date().getTime(); // Tạo ID mới
+      storyData.status = "Đang tiến hành";
+      storyData.chapters = [];
+      stories.push(storyData);
+      alert("Đã thêm truyện mới thành công!");
     }
+
+    saveStories();
+    renderTable();
+    storyForm.reset();
+    storyForm.classList.add('hidden');
+    showAddFormBtn.classList.remove('hidden');
+    document.getElementById("story-id").value = '';
   });
 
-  // Reset form
-  document.getElementById("tenTruyen").value = "";
-  document.getElementById("tacGia").value = "";
-  document.getElementById("soChuong").value = "";
-  document.getElementById("trangThai").value = "";
-  document.getElementById("linkAnh").value = "";
+  // Hiện form khi nhấn nút "+ Thêm"
+  showAddFormBtn.addEventListener('click', () => {
+    formTitle.textContent = "Thêm truyện mới";
+    storyForm.reset();
+    document.getElementById("story-id").value = '';
+    storyForm.classList.remove('hidden');
+    showAddFormBtn.classList.add('hidden');
+  });
 
-  alert("Đã thêm truyện mới!");
-}
+  // Hủy và ẩn form
+  cancelBtn.addEventListener('click', () => {
+    storyForm.reset();
+    storyForm.classList.add('hidden');
+    showAddFormBtn.classList.remove('hidden');
+  });
+
+  // === CHẠY BAN ĐẦU ===
+  renderTable();
+});

@@ -4,12 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Quản Lý Truyện</title>
-
-  <!-- CSS cho bố cục admin chung -->
-  <link rel="stylesheet" href="css/admin_style.css">
-
-  <!-- CSS dành riêng cho trang Quản lý truyện -->
-  <link rel="stylesheet" href="css/quanlytruyen_style.css">
+  <script src="../js/admin-guard.js"></script>
+  <link rel="stylesheet" href="/webtruyen/admin/css/admin_style.css">
+  <link rel="stylesheet" href="/webtruyen/admin/css/quanlytruyen_style.css">
 </head>
 
 <body>
@@ -18,48 +15,58 @@
       <h2>ADMIN PANEL</h2>
       <ul class="menu">
         <li><a href="admin.html">🏠 Tổng Quan</a></li>
-        <li><a href="quanlytruyen.html">📚 Quản Lý Truyện</a></li>
-        <li><a href="quanlinguoidung.html">👥 Quản Lý Người Dùng</a></li>
-        <li><a href="../../index.html">🚪 Đăng Xuất</a></li>
+        <li class="active"><a href="/webtruyen/admin/quanlytruyen.html">📚 Quản Lý Truyện</a></li>
+        <li><a href="/webtruyen/admin/quanlinguoidung.html">👥 Quản Lý Người Dùng</a></li>
+        <li><a href="#" id="admin-logout-button">🚪 Đăng Xuất</a></li>
       </ul>
     </aside>
 
     <main class="main-content">
-      <h1>📚 Danh sách truyện</h1>
-      <button class="btn-add">+ Thêm truyện</button>
-      <!-- FORM THÊM TRUYỆN  -->
-      <div id="form-them-truyen" style="display: none; margin-bottom: 20px;">
-        <input type="text" id="tenTruyen" placeholder="Tên truyện">
-        <input type="text" id="tacGia" placeholder="Tác giả">
-        <input type="number" id="soChuong" placeholder="Số chương">
-        <input type="text" id="trangThai" placeholder="Trạng thái">
-        <input type="text" id="linkAnh" placeholder="Link ảnh (VD: truyen3.jpg)">
-        <button onclick="themTruyen()">Lưu</button>
-      </div>
+      <h1>📚 Quản lý danh sách truyện</h1>
+      <button id="show-add-form-btn" class="btn btn-add">+ Thêm truyện mới</button>
 
+      <form id="story-form" class="admin-form hidden">
+        <input type="hidden" id="story-id">
+        <h3 id="form-title">Thêm truyện mới</h3>
+        <div class="input-group">
+          <label for="story-title">Tên truyện</label>
+          <input type="text" id="story-title" required>
+        </div>
+        <div class="input-group">
+          <label for="story-author">Tác giả</label>
+          <input type="text" id="story-author" required>
+        </div>
+        <div class="input-group">
+          <label for="story-cover">Đường dẫn ảnh bìa</label>
+          <input type="text" id="story-cover" placeholder="/img/img_truyen/Ten-Folder/cover.jpg" required>
+        </div>
+        <div class="input-group">
+          <label for="story-desc">Mô tả</label>
+          <textarea id="story-desc" rows="4"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="button-submit">Lưu</button>
+          <button type="button" id="cancel-btn" class="button-cancel">Hủy</button>
+        </div>
+      </form>
 
-      <table class="truyen-table">
-
+      <table class="data-table">
         <thead>
           <tr>
-            <th>Ảnh</th>
+            <th>ID</th>
+            <th>Ảnh Bìa</th>
             <th>Tên truyện</th>
             <th>Tác giả</th>
-            <th>Chương</th>
-            <th>Trạng thái</th>
             <th>Hành động</th>
           </tr>
-
         </thead>
-        <!-- danh sách truyện -->
-
-        <tbody>
-          <!-- Các dòng truyện sẽ được thêm vào đây -->
+        <tbody id="story-list-body">
         </tbody>
       </table>
     </main>
   </div>
-  <script src="js/quanlytruyen.js"></script>
+
+  <script src="/webtruyen/admin/js/quanlytruyen.js"></script>
 </body>
 
 </html>
