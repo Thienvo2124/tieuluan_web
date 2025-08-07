@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             latestChapterName = latestChapter.name;
         }
         const coverImage = story.coverImage.replace(/\\/g, '/');
-        const storyInfoLink = `/info_truyen/truyen-${story.title.replace(/\s+/g, '-')}.html`;
+        const storyInfoLink = story.link; // Đọc trực tiếp từ database
 
         return `
             <a href="${storyInfoLink}" class="truyen-item">
