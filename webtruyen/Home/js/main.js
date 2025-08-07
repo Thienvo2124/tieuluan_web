@@ -39,3 +39,22 @@ if (loggedInUser) {
     loggedInElements.forEach(el => el.classList.add('hidden'));
 }
 
+
+// ==================================================
+// === THÊM MỚI: LOGIC XỬ LÝ TÌM KIẾM ===
+// ==================================================
+const searchForm = document.getElementById('search-form');
+const searchInput = document.getElementById('search-input');
+
+if (searchForm) {
+    searchForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Ngăn trang tải lại
+
+        const query = searchInput.value.trim(); // Lấy từ khóa và xóa khoảng trắng thừa
+
+        if (query) {
+            // Chuyển hướng đến trang tìm kiếm với từ khóa là một tham số URL
+            window.location.href = `/webtruyen/Home/timtruyen.html?q=${encodeURIComponent(query)}`;
+        }
+    });
+}

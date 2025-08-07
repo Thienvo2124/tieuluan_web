@@ -8,7 +8,7 @@
 body {
   background-color: #121212;
   color: #e0e0e0;
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   line-height: 1.6;
 }
 
@@ -580,4 +580,25 @@ a {
 /* Logic hiển thị dropdown khi di chuột vào container */
 .user-dropdown:hover .dropdown-content {
   display: block;
+}
+
+#search-results-title {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* === STYLE CHO THÔNG BÁO KẾT QUẢ TÌM KIẾM === */
+
+.search-notice {
+  /* Dòng này ra lệnh cho phần tử chiếm toàn bộ chiều rộng của grid container */
+  grid-column: 1 / -1;
+
+  text-align: center;
+  font-size: 1.2rem;
+  /* Cỡ chữ to hơn một chút */
+  color: #aaaaaa;
+  /* Màu xám nhạt cho dễ nhìn */
+  padding: 40px 20px;
+  /* Thêm khoảng trống xung quanh */
 }

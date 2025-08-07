@@ -1,208 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Đọc truyện tranh online miễn phí tại TruyenQQ">
-  <title>Trang Truyện - Truyen</title>
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="stylesheet" href="css/trangchu_style.css">
-  <link rel="stylesheet" href="css/timtruyen.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Kết quả tìm kiếm</title>
+  <link rel="stylesheet" href="/webtruyen/Home/css/trangchu_style.css">
+  <link rel="stylesheet" href="/webtruyen/Home/css/Reset.css">
+  <link rel="stylesheet" href="/webtruyen/Home/css/theloai_style.css">
 </head>
+
 <body>
-  <!-- <header>
-    <div class="header-top">
-      <div class="logo">
-        <img src="webtruyen/Home/img/logo_bocap.png" alt="Logo bocapTruyen">
-        <span>BOCAPTRUYEN</span>
-      </div>
-      <div class="search-box">
-        <input type="text" placeholder="Tìm truyện..." aria-label="Tìm kiếm truyện">
-        <button aria-label="Tìm kiếm">🔍</button>
-      </div>
-      <div class="user-actions">
-        <a href="/webtruyen/Home/login.html" class="btn btn-secondary logged-out-only">Đăng Nhập</a>
-        <a href="/webtruyen/Home/register.html" class="btn btn-primary logged-out-only">Đăng Kí</a>
-        <div class="user-dropdown logged-in-only hidden">
-          <button id="user-menu-trigger" class="user-menu-button">
-            <span id="welcome-message"></span>
-            <span class="arrow-down"><img id="user_avatar" src="/webtruyen/Home/img/user_img.jpg"
-                alt="user_avatar"></span>
-          </button>
-          <div id="user-menu-content" class="dropdown-content">
-            <a href="/profile.html">Thông tin tài khoản</a>
-            <a href="/my-stories.html">Truyện theo dõi</a>
-            <a href="/webtruyen/admin/admin.html" id="admin-link" class="hidden">Trang Quản Trị</a>
-            <a href="#" id="logout-button">Đăng Xuất</a>
-          </div>
-        </div>
-      </div>
+  <div id="header-container"></div>
+
+  <main class="content">
+    <h1 id="search-results-title">Đang tìm kiếm...</h1>
+    <br>
+    <div class="truyen-list" id="search-results-container">
     </div>
-    <nav class="main-menu">
-      <div class="hamburger">☰</div>
-      <ul>
-        <li><a href="index.html">Trang Chủ</a></li>
-        <li class="has-dropdown">
-          <a href="#">Thể Loại</a>
-          <div class="dropdown">
-            <ul class="theloai-list">
-              <li><a title="Action" href="/the-loai/action.html">Action</a></li>
-              <li><a title="Adventure" href="/the-loai/adventure.html">Adventure</a></li>
-              <li><a title="Anime" href="/the-loai/anime.html">Anime</a></li>
-              <li><a title="Chuyển Sinh" href="/the-loai/chuyen-sinh.html">Chuyển Sinh</a></li>
-              <li><a title="Cổ Đại" href="/the-loai/co-dai.html">Cổ Đại</a></li>
-              <li><a title="Comedy" href="/the-loai/comedy.html">Comedy</a></li>
-              <li><a title="Comic" href="/the-loai/comic.html">Comic</a></li>
-              <li><a title="Demons" href="/the-loai/demons.html">Demons</a></li>
-              <li><a title="Detective" href="/the-loai/detective.html">Detective</a></li>
-              <li><a title="Doujinshi" href="/the-loai/doujinshi.html">Doujinshi</a></li>
-              <li><a title="Drama" href="/the-loai/drama.html">Drama</a></li>
-              <li><a title="Fantasy" href="/the-loai/fantasy.html">Fantasy</a></li>
-              <li><a title="Gender Bender" href="/the-loai/gender-bender.html">Gender Bender</a></li>
-              <li><a title="Harem" href="/the-loai/harem.html">Harem</a></li>
-              <li><a title="Historical" href="/the-loai/historical.html">Historical</a></li>
-              <li><a title="Horror" href="/the-loai/horror.html">Horror</a></li>
-              <li><a title="Huyền Huyễn" href="/the-loai/huyen-huyen.html">Huyền Huyễn</a></li>
-              <li><a title="Isekai" href="/the-loai/isekai.html">Isekai</a></li>
-              <li><a title="Josei" href="/the-loai/josei.html">Josei</a></li>
-              <li><a title="Mafia" href="/the-loai/mafia.html">Mafia</a></li>
-              <li><a title="Magic" href="/the-loai/magic.html">Magic</a></li>
-              <li><a title="Manga" href="/the-loai/manga.html">Manga</a></li>
-              <li><a title="Manhua" href="/the-loai/manhua.html">Manhua</a></li>
-              <li><a title="Manhwa" href="/the-loai/manhwa.html">Manhwa</a></li>
-              <li><a title="Martial Arts" href="/the-loai/martial-arts.html">Martial Arts</a></li>
-              <li><a title="Military" href="/the-loai/military.html">Military</a></li>
-              <li><a title="Mystery" href="/the-loai/mystery.html">Mystery</a></li>
-              <li><a title="Ngôn Tình" href="/the-loai/ngon-tinh.html">Ngôn Tình</a></li>
-              <li><a title="One shot" href="/the-loai/one-shot.html">One shot</a></li>
-              <li><a title="Psychological" href="/the-loai/psychological.html">Psychological</a></li>
-              <li><a title="Romance" href="/the-loai/romance.html">Romance</a></li>
-              <li><a title="School Life" href="/the-loai/school-life.html">School Life</a></li>
-              <li><a title="Sci-fi" href="/the-loai/sci-fi.html">Sci-fi</a></li>
-              <li><a title="Seinen" href="/the-loai/seinen.html">Seinen</a></li>
-              <li><a title="Shoujo" href="/the-loai/shoujo.html">Shoujo</a></li>
-              <li><a title="Shoujo Ai" href="/the-loai/shoujo-ai.html">Shoujo Ai</a></li>
-              <li><a title="Shounen" href="/the-loai/shounen.html">Shounen</a></li>
-              <li><a title="Shounen Ai" href="/the-loai/shounen-ai.html">Shounen Ai</a></li>
-              <li><a title="Slice of life" href="/the-loai/slice-of-life.html">Slice of life</a></li>
-              <li><a title="Sports" href="/the-loai/sports.html">Sports</a></li>
-              <li><a title="Supernatural" href="/the-loai/supernatural.html">Supernatural</a></li>
-              <li><a title="Tragedy" href="/the-loai/tragedy.html">Tragedy</a></li>
-              <li><a title="Trọng Sinh" href="/the-loai/trong-sinh.html">Trọng Sinh</a></li>
-              <li><a title="Truyện Màu" href="/the-loai/truyen-mau.html">Truyện Màu</a></li>
-              <li><a title="Webtoon" href="/the-loai/webtoon.html">Webtoon</a></li>
-              <li><a title="Xuyên Không" href="/the-loai/xuyen-khong.html">Xuyên Không</a></li>
-            </ul>
-          </div>
-        </li>
+  </main>
 
-        <li><a href="#">Lịch Sử</a></li>
-        <li><a href="#">Theo Dõi</a></li>
-        <li><a href="/webtruyen/Home/timtruyen.html">Tìm Truyện</a></li>
-        <li><a href="#">Fanpage</a></li>
-      </ul>
-    </nav>
-  </header> -->
-
-  <!-- Vị trí header-->
-<div id="header-container"></div>
-
-<!-- Gọi script đã tách -->
-<script src="/webtruyen/Home/js/load-header.js"></script>
-
-
-  <div class="content">
-  <div class="search-advanced-box">
-  <h2 class="search-advanced-title">
-    <i class="fa fa-flag"></i> Tìm kiếm nâng cao
-  </h2>
-  
-  <button class="reset-btn">&#8635; Reset</button>
-  <form class="search-advanced-form">
-    <div class="genres-grid">
-      <div>
-        <b>Thể loại truyện</b><br>
-        <label><input type="checkbox"> Action</label><br>
-        <label><input type="checkbox"> Chuyển Sinh</label><br>
-        <label><input type="checkbox"> Comic</label><br>
-        <label><input type="checkbox"> Doujinshi</label><br>
-        <label><input type="checkbox"> Gender Bender</label><br>
-        <label><input type="checkbox"> Horror</label><br>
-        <label><input type="checkbox"> Josei</label><br>
-        <label><input type="checkbox"> Manga</label><br>
-        <label><input type="checkbox"> Martial Arts</label><br>
-        <label><input type="checkbox"> Ngôn Tình</label><br>
-        <label><input type="checkbox"> Romance</label><br>
-        <label><input type="checkbox"> Seinen</label><br>
-        <label><input type="checkbox"> Shounen</label><br>
-        <label><input type="checkbox"> Sports</label><br>
-        <label><input type="checkbox"> Trọng Sinh</label><br>
-        <label><input type="checkbox"> Xuyên Không</label><br>
-      </div>
-      <div>
-        <label><input type="checkbox"> Adventure</label><br>
-        <label><input type="checkbox"> Cổ Đại</label><br>
-        <label><input type="checkbox"> Demons</label><br>
-        <label><input type="checkbox"> Drama</label><br>
-        <label><input type="checkbox"> Harem</label><br>
-        <label><input type="checkbox"> Huyền Huyễn</label><br>
-        <label><input type="checkbox"> Mafia</label><br>
-        <label><input type="checkbox"> Manhua</label><br>
-        <label><input type="checkbox"> Military</label><br>
-        <label><input type="checkbox"> One shot</label><br>
-        <label><input type="checkbox"> School Life</label><br>
-        <label><input type="checkbox"> Shoujo</label><br>
-        <label><input type="checkbox"> Shoujo Ai</label><br>
-        <label><input type="checkbox"> Shounen Ai</label><br>
-        <label><input type="checkbox"> Supernatural</label><br>
-        <label><input type="checkbox"> Truyện Màu</label><br>
-      </div>
-      <div>
-        <label><input type="checkbox"> Anime</label><br>
-        <label><input type="checkbox"> Comedy</label><br>
-        <label><input type="checkbox"> Detective</label><br>
-        <label><input type="checkbox"> Fantasy</label><br>
-        <label><input type="checkbox"> Historical</label><br>
-        <label><input type="checkbox"> Isekai</label><br>
-        <label><input type="checkbox"> Magic</label><br>
-        <label><input type="checkbox"> Manhwa</label><br>
-        <label><input type="checkbox"> Mystery</label><br>
-        <label><input type="checkbox"> Psychological</label><br>
-        <label><input type="checkbox"> Sci-fi</label><br>
-        <label><input type="checkbox"> Slice of life</label><br>
-        <label><input type="checkbox"> Tragedy</label><br>
-        <label><input type="checkbox"> Webtoon</label><br>
-      </div>
-    </div>
-    <div class="search-advanced-options">
-      <div>
-        <label>Quốc gia</label><br>
-        <select>
-          <option>Tất cả</option>
-        </select>
-      </div>
-      <div>
-        <label>Tình Trạng</label><br>
-        <select>
-          <option>Tất cả</option>
-        </select>
-      </div>
-      <div>
-        <label>Số lượng chương</label><br>
-        <input type="text" value="> 0">
-      </div>
-      <div>
-        <label>Sắp xếp</label><br>
-        <select>
-          <option>Ngày đăng giảm dần</option>
-        </select>
-      </div>
-      <div class="search-btn-wrap">
-        <button type="submit" class="search-btn">Tìm kiếm</button>
-      </div>
-    </div>
-  </form>
-</div></div>
-  
+  <script src="/webtruyen/Home/js/load-header.js"></script>
+  <script src="/webtruyen/Home/js/search.js"></script>
 </body>
+
+</html>
