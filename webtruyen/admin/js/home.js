@@ -57,22 +57,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hiển thị tất cả truyện vào mục "Truyện Mới Cập Nhật"
     newListContainer.innerHTML = stories.map(story => createStoryCard(story)).join('');
 });
-
-
-// File: js/home.js
-
-// ... (toàn bộ code cũ hiển thị danh sách truyện của bạn ở trên) ...
-
-
-// ==========================================================
-// === THÊM MỚI: TỰ ĐỘNG LẮNG NGHE THAY ĐỔI TỪ TAB KHÁC ===
-// ==========================================================
-window.addEventListener('storage', function (event) {
-    // Chỉ lắng nghe sự thay đổi của 'stories_db'
-    if (event.key === 'stories_db') {
-        console.log("HOME.JS: Phát hiện 'stories_db' thay đổi từ tab khác! Tự động tải lại...");
-
-        // Tự động tải lại trang để đọc dữ liệu mới nhất từ localStorage
-        window.location.reload();
-    }
-});
