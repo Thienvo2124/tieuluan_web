@@ -582,7 +582,9 @@ a {
   display: block;
 }
 
-#search-results-title {
+#search-results-title,
+#follow-results-title,
+#history-results-title {
   font-size: 32px;
   font-weight: bold;
   padding: 10px;
@@ -590,7 +592,9 @@ a {
 
 /* === STYLE CHO THÔNG BÁO KẾT QUẢ TÌM KIẾM === */
 
-.search-notice {
+.search-notice,
+.follow-notice,
+.histories-notice {
   /* Dòng này ra lệnh cho phần tử chiếm toàn bộ chiều rộng của grid container */
   grid-column: 1 / -1;
 
