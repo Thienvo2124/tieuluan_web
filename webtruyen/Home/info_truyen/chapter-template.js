@@ -1,3 +1,44 @@
+
+function recordReadingHistory(storyId, chapterName) {
+    const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
+
+    // Nếu người dùng chưa đăng nhập, không làm gì cả
+    if (!loggedInUser) {
+        return;
+    }
+
+    let history_db = JSON.parse(localStorage.getItem('history_db')) || {};
+    const username = loggedInUser.username;
+
+    // Lấy danh sách lịch sử của user, nếu chưa có thì tạo mảng rỗng
+    let userHistory = history_db[username] || [];
+
+    // TÌM VÀ XÓA BẢN GHI CŨ: Để đảm bảo mỗi truyện chỉ xuất hiện 1 lần trong lịch sử
+    const existingEntryIndex = userHistory.findIndex(entry => entry.storyId === storyId);
+    if (existingEntryIndex > -1) {
+        userHistory.splice(existingEntryIndex, 1);
+    }
+
+    // THÊM BẢN GHI MỚI VÀO ĐẦU DANH SÁCH:
+    // Bản ghi mới nhất sẽ luôn nằm ở đầu
+    userHistory.unshift({
+        storyId: storyId,
+        chapterName: chapterName,
+        viewedAt: new Date().getTime() // Lưu lại thời gian xem
+    });
+
+    // Giới hạn lịch sử ở 50 mục gần nhất (tùy chọn)
+    if (userHistory.length > 50) {
+        userHistory = userHistory.slice(0, 50);
+    }
+
+    // Cập nhật lại history_db và lưu vào localStorage
+    history_db[username] = userHistory;
+    localStorage.setItem('history_db', JSON.stringify(history_db));
+    console.log(`Đã ghi lịch sử: User ${username} đọc chapter ${chapterName} của truyện ${storyId}`);
+}
+
+
 const dataProvider = document.getElementById('chapter-data-provider');
 
 // Lấy dữ liệu từ data attributes
@@ -57,4 +98,12 @@ for (let i = 0; i <= totalPages; i++) {
     img.src = `${imagePath}${i}.jpg`;
     img.alt = `Trang ${i} - ${seriesName} - Chapter ${currentChapter}`;
     imageContainer.appendChild(img);
+}
+
+const storyId = Number(dataProvider.dataset.storyId);
+const chapterNameForHistory = dataProvider.dataset.currentChapter;
+
+// Tự động gọi hàm để ghi lại lịch sử đọc
+if (storyId && chapterNameForHistory) {
+    recordReadingHistory(storyId, chapterNameForHistory);
 }

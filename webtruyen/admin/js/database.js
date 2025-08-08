@@ -2,7 +2,7 @@
 
 const initialStoriesData = [
     {
-        id: new Date('2025-08-01').getTime(),
+        id: 101,
         title: "Gachi Akuta",
         author: "Kei Urana",
         link: "/webtruyen/Home/info_truyen/truyen-Gachi Akuta.html",
@@ -24,7 +24,7 @@ const initialStoriesData = [
         ]
     },
     {
-        id: new Date('2025-08-02').getTime(),
+        id: 102,
         title: "Hôm Nay - Tôi Hóa Kaiju",
         author: "Đang cập nhật",
         link: "/webtruyen/Home/info_truyen/truyen-Hôm Nay - Tôi Hóa Kaiju.html",
@@ -44,7 +44,7 @@ const initialStoriesData = [
         ]
     },
     {
-        id: new Date('2025-08-03').getTime(),
+        id: 103,
         title: "Gacha Vô Hạn",
         author: "Đang cập nhật",
         link: "/webtruyen/Home/info_truyen/truyen-Gacha Vô Hạn.html",
@@ -58,7 +58,7 @@ const initialStoriesData = [
         ]
     },
     {
-        id: new Date('2025-08-04').getTime(),
+        id: 104,
         title: "Lúc Đó, Tôi Đã Chuyển Sinh Thành Slime",
         author: "Đang cập nhật",
         link: "/webtruyen/Home/info_truyen/truyen-Lúc Đó, Tôi Đã Chuyển Sinh Thành Slime.html",
@@ -71,7 +71,7 @@ const initialStoriesData = [
         ]
     },
     {
-        id: new Date('2025-08-05').getTime(),
+        id: 105,
         title: "Rebuild World",
         author: "Đang cập nhật",
         link: "/webtruyen/Home/info_truyen/truyen-Rebuild World.html",
@@ -84,7 +84,7 @@ const initialStoriesData = [
         ]
     },
     {
-        id: new Date('2025-08-06').getTime(),
+        id: 106,
         title: "Tao Muốn Trở Thành Chúa Tể Bóng Tối!!",
         author: "Đang cập nhật",
         link: "/webtruyen/Home/info_truyen/truyen-Tao Muốn Trở Thành Chúa Tể Bóng Tối!!.html",

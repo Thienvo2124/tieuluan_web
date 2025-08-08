@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
             : 'N/A';
         const storyLink = story.link; // Dùng link tĩnh đã có
 
+        // Phiên bản đã sửa lỗi cú pháp, không có khoảng trắng thừa và thẻ đóng đúng
         return `
-            < a href = "${storyLink}" class="truyen-item" >
-                <img src="${story.coverImage}" alt="${story.title}">
-                    <p class="ten">${story.title}</p>
-                    <p class="chuong">Chương ${latestChapterName}</p>
-                </>
-        `;
+        <a href="${storyLink}" class="truyen-item">
+            <img src="${story.coverImage}" alt="${story.title}">
+            <p class="ten">${story.title}</p>
+            <p class="chuong">Chương ${latestChapterName}</p>
+        </a>
+    `;
     }).join('');
-
     followedContainer.innerHTML = resultsHTML;
 });
