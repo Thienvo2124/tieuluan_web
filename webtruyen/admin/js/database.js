@@ -2,7 +2,7 @@
 
 const initialStoriesData = [
     {
-        id: 101,
+        id: 101, // ssửa lại id tĩnh 
         title: "Gachi Akuta",
         author: "Kei Urana",
         link: "/webtruyen/Home/info_truyen/truyen-Gachi Akuta.html",
