@@ -128,3 +128,23 @@ if (followBtn) {
     }
 }
 
+// --- LOGIC CHO HAMBURGER MENU ---
+const hamburger = document.querySelector('.hamburger');
+const mainMenu = document.querySelector('.main-menu');
+
+if (hamburger && mainMenu) {
+    hamburger.addEventListener('click', () => {
+        mainMenu.classList.toggle('nav-active');
+    });
+}
+
+// Thêm vào trong DOMContentLoaded của main.js
+const userDropdown = document.querySelector('.user-dropdown');
+if (userDropdown) {
+    userDropdown.addEventListener('click', function (event) {
+        // Ngăn việc click vào các link con bên trong làm ẩn menu
+        if (event.target.closest('.user-avatar-trigger')) {
+            this.classList.toggle('active');
+        }
+    });
+}
