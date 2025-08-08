@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loggedInUser = JSON.parse(sessionStorage.getItem('loggedInUser'));
 
     if (!loggedInUser) {
-        historyContainer.innerHTML = `<p class="history-notice">Bạn cần <a href="/login.html">đăng nhập</a> để xem lịch sử.</p>`;
+        historyContainer.innerHTML = `<p class="history-notice">Bạn cần <a href="/login.html" style="color: #ff6600;">đăng nhập</a> để xem lịch sử.</p>`;
+        //         return;
         return;
     }
 

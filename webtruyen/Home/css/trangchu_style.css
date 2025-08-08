@@ -594,7 +594,7 @@ a {
 
 .search-notice,
 .follow-notice,
-.histories-notice {
+.history-notice {
   /* Dòng này ra lệnh cho phần tử chiếm toàn bộ chiều rộng của grid container */
   grid-column: 1 / -1;
 
